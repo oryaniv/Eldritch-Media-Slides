@@ -86,3 +86,4 @@ var textAnimesrep = [{ name: "neon-glow", level: 1 /* Basic */ }, { name: "spin-
         return ds.filter(function (e) {
             return e.level <= level;
         });
+    }
