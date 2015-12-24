@@ -5,7 +5,7 @@ var coldStatesrep = [{ name: "grayscale", level: 1 /* Basic */ }, { name: "sepia
 var textStylesrep = [{ name: "rainbow", level: 2 /* All */ }, { name: "retro", level: 2 /* All */ }, { name: "text-style1", level: 1 /* Basic */ }, { name: "inset", level: 1 /* Basic */ }, { name: "tri-dimension", level: 1 /* Basic */ }];
 var textAnimesrep = [{ name: "neon-glow", level: 1 /* Basic */ }, { name: "spin-around", level: 1 /* Basic */ }, { name: "space-in-out", level: 1 /* Basic */ }, { name: "pass-by", level: 2 /* All */ }, { name: "skew-in", level: 2 /* All */ }];
     
-    Run = function (sd) {
+var   Run = function (sd) {
         //music
         $("#music").trigger('play');
         //backgrounds
