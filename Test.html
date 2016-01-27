@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>EMS test</title>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+<style>
+    ul{
+        position:absolute;
+        left:15%;
+    }
+    ul li{
+        display:inline-block;
+    }
+
+    .rotate30{
+        -webkit-transform:rotateZ(30deg);
+        transform:rotateZ(30deg);
+    }
+
+    .rounded {
+        border-radius:50px;
+    }
+
+    .framed {
+        border:6px solid black;
+    }
+
+    .controlBar{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        height:5%;
+        background: -webkit-linear-gradient(-90deg, rgba(120,122,17,1) 0, rgba(120,122,17,1) 52%, rgba(247,203,7,1) 100%);
+        background: -moz-linear-gradient(180deg, rgba(120,122,17,1) 0, rgba(120,122,17,1) 52%, rgba(247,203,7,1) 100%);
+        background: linear-gradient(180deg, rgba(120,122,17,1) 0, rgba(120,122,17,1) 52%, rgba(247,203,7,1) 100%);
+        background-position: 50% 50%;
+        -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+        transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    #controlplcholder{
+        z-index:-1;
+        position:absolute;
+        bottom:0;
+        width:100%;
+        height:5%;
+        color:blue;
+        font-size:30px;
+        text-align:center;
+        width:100%;
+        height:10%;
+    }
+
+    .control-button{
+        height:100%;
+        width:5%;
+        background: -webkit-linear-gradient(-90deg, rgba(120,122,17,1) 0, rgba(120,122,17,1) 52%, rgba(247,203,7,1) 100%);
+        background: -moz-linear-gradient(180deg, rgba(120,122,17,1) 0, rgba(120,122,17,1) 52%, rgba(247,203,7,1) 100%);
+        background: linear-gradient(180deg, rgba(120,122,17,1) 0, rgba(120,122,17,1) 52%, rgba(247,203,7,1) 100%);
+        background-position: 50% 50%;
+        border: 1px solid rgb(154, 141, 0);
+    }
+
+    .wider {
+        width:15%;
+    }
+
+    .taller{
+        height:20%;
+    }
+
+    .contDiv{
+        position:relative;
+        border:1px solid red;
+        background-color:black;
+    }
+
+    
+
+</style>
+</head>
+<body>
+<h2 id="random_title" style="text-align:center">Some Random Page</h2>
+
+
+
+<input id="hid" type="hidden" value="3"/>
+<button onclick="moveSm();">Show small!</button>
+<button onclick="runSmall();">Run small!</button>
+<ul>
+    <li><div id="target1"></div></li>
+    <li><div id="target2"></div></li>
+    <li><div id="target3"></div></li>
+    <li><div id="target4"></div></li>
+</ul>
+<div style="height:500px;"></div>
+<button onclick="moveMd();">Show medium!</button>
+<button onclick="runMed();">Run medium!</button>
+<ul>
+    <li><div id="target5"></div></li>
+    <li><div id="target6"></div></li>
+    <li><div id="target7"></div></li>
+</ul>
+   <div style="height:1000px;"></div>
+
+<button onclick="moveLg();">Show large!</button>
+<button onclick="runLg();">Run large!</button>
+<ul>
+    <li><div id="target8"></div></li>
+    <li><div id="target9"></div></li>
+</ul> 
+<div style="height:2000px;"></div> 
+
+<button onclick="moveFull();">Show Full!</button>
+<button onclick="runFull();">Run Full!</button>
+<div id="target10"></div>
+
+
+
+<script>
+    function callme(x,y){
+        alert(x+y);
+    }
+
+    function callmeToo(x,y){
+        alert(x*y);
+    }
+
+    function roki(x, y) { document.querySelector("#random_title").innerHTML += ' '+ x * y; };
+
+    var imgPath = "../Content/ESSImages/";
+    //imgs
+    var images = [];
+    for (var i = 10; i < 19; i++)
+    {
+        images.push(imgPath + "img" + i + ".jpg");
+    }
+
+
+    
+
+
+    //slides
+    var slides = [];
+    for (var i = 30; i < 39; i++)
+    {
+        slides.push({path:imgPath + "img" + i + ".jpg",lifetime:5});
+    }
+
+    //slidewithtext
+    var slidewText = [];
+    for (var i = 30; i < 33; i++)
+    {
+        slidewText.push({path:imgPath + "img" + i + ".jpg",lifetime:5,text:"slide number "+(i-29).toString()});
+    }
+
+    //free texts
+    var styles=[{'color':'red','font-style':'bold'},{'color':'blue','font-style':'italic'},{'color':'green','transform':'skew(60deg)'}];
+    var titles = [];
+    for (var i = 0; i < 10; i++) {
+        titles.push({text:"text number "+i,lifetime:5,style:styles[i%styles.length]});
+    }
+    //no style
+    var titlesnoStyle = [];
+    for (var i = 0; i < 10; i++) {
+        titlesnoStyle.push({ text: "text number " + i, lifetime: 5});
+    }
+
+    function returnAte() {
+        return 8;
+    }
+
+    function returnFive() {
+        return 5;
+    }
+
+    function logObj(obj) {
+        for (prop in obj) {
+            console.log(prop);
+        }
+    }
+
+    function romba() {
+        return { n: "sammy", m: "soosoo", x: "gorzaq" };
+    }
+
+
+    //callbacks
+    var CallBack = { Function: "logObj", Params: [romba()] };
+    var CallBack2 = { Function: "callmeToo", Params: [returnFive(), returnAte()] };
+
+    //backgrounds
+    var bGrounds = [{ path: imgPath + "dragon.jpg" }, { path: imgPath + "station.jpg" }];
+
+
+    ///add and set
+    var moreImages = [];
+    for (var i = 40; i < 45; i++) {
+        moreImages.push(imgPath + "img" + i + ".jpg");
+    }
+
+    var moreSlides = [];
+    for (var i = 20; i < 23; i++) {
+        moreSlides.push({path:imgPath + "img" + i + ".jpg",lifetime:3});
+    }
+
+    var moreTexts = [];
+    for (var i = 0; i < 10; i++) {
+        moreTexts.push({ text: "additional text number " + i, lifetime: 5, style: styles[i % styles.length] });
+    }
+
+    var morebGrounds = [{ path: imgPath + "img0.jpg" }];
+    var defAudio = "../Content/Audio/Final_Getsuga_Ichigo_Theme_Song.mp3";
+    var anotherAudio = "../Content/Audio/Red_nbts.mp3";
+    
+
+    var sd1;
+    var sd2;
+    var sd3;
+    var sd4;
+    var sd5;
+    var sd6;
+    var sd7;
+    var sd8;
+    var sd9;
+    var sd10;
+
+    function moveSm() {
+        sd1 = EldritchSlideShow.Create("#target1", { Images: images });
+        sd2 = EldritchSlideShow.Create("#target2", { Images: images, Animations: 1, Size: 1 });
+        sd3 = EldritchSlideShow.Create("#target3", { Slides: slidewText, Animations: 2, TextStyles: 1, Size: 1 });
+        sd4 = EldritchSlideShow.Create("#target4", { Images: images, Slides: slides, SlideTexts: titlesnoStyle, backgroundbetween: true, Filters: 2, Backgrounds: bGrounds, TextStyles: 2, TextAnimes: 1, Size: 1, Controls: 2 });
+    }
+
+    function moveMd() {
+        sd5 = EldritchSlideShow.Create("#target5", { Images: images, Slides: slidewText, Animations: 2, backgroundbetween: true, Backgrounds: bGrounds, Filters: 2, TextStyles: 2, TextAnimes: 2, Size: 2 });
+        sd6 = EldritchSlideShow.Create("#target6", { Slides: slidewText, SlideTexts: titles, Animations: 2, Filters: 1, TextStyles: 2, TextAnimes: 2, Size: 2, Controls: 2, Loop: true });
+        sd7 = EldritchSlideShow.Create("#target7", { Slides: slides, SlideTexts: titles, Animations: 2, backgroundbetween: true, Backgrounds: bGrounds, Filters: 3, TextStyles: 1, TextAnimes: 1, Size: 2, Controls: 1 });
+    }
+
+    function moveLg() {
+        sd8 = EldritchSlideShow.Create("#target8", { Slides: slides, SlideTexts: titles, Slides: slides, Animations: 3, Filters: 1, TextStyles: 3, TextAnimes: 1, Size: 3, Controls: 2 , CallBack:CallBack});
+        sd9 = EldritchSlideShow.Create("#target9", { Slides: slidewText, backgroundbetween: true, Backgrounds: bGrounds, Animations: 1, Filters: 2, TextStyles: 1, TextAnimes: 1, Size: 3, Controls: 1, Loop: true, CallBack: CallBack2 });
+    }
+
+    function moveFull() {
+        sd10 = EldritchSlideShow.Create("#target10", { Slides: slidewText, CssClass: "rounded", backgroundbetween: true, Backgrounds: bGrounds, Animations: 1, Filters: 2, TextStyles: 1, TextAnimes: 1, Size: 4, Controls: 1, Loop: true });
+    }
+
+
+    function run() {
+        window.frames[0].frameElement.contentWindow.Run(sd.slideShow);
+        window.frames[1].frameElement.contentWindow.Run(sd2.slideShow);
+        window.frames[2].frameElement.contentWindow.Run(sd3.slideShow);
+        window.frames[3].frameElement.contentWindow.Run(sd4.slideShow);
+    }
+
+    function runSmall() {
+        sd1.Start();
+        sd2.Start();
+        sd3.Start();
+        sd4.Start();
+    }
+
+    function runMed() {
+        sd5.Start();
+        sd6.Start();
+        sd7.Start();
+    }
+
+    function runLg() {
+        sd8.Start();
+        sd9.Start();
+    }
+
+    function runFull() {
+        sd10.Start();
+    }
+    
+</script>
+
+     
+
+</body>
+</html>
