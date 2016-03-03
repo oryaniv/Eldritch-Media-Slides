@@ -1,16 +1,40 @@
-var inAnimationsrep = [{ name: "normalsize", level: 2 /* Standard */ }, { name: "background-fade-in", level: 1 /* Basic */ }, { name: "rotatex-in", level: 2 /* Standard */ }, { name: "rotateY-in", level: 2 /* Standard */ }];
-var outAnimationsrep = [{ name: "shrink", level: 2 /* Standard */ }, { name: "background-fade-out", level: 1 /* Basic */ }, { name: "rotatex-out", level: 2 /* Standard */ }, { name: "rotateY-out", level: 2 /* Standard */ }];
-var coldAnimationsrep = [{ name: "gray-in", level: 1 /* Basic */ }, { name: "sepia-in", level: 1 /* Basic */ }, { name: "contrast-in", level: 2 /* All */ }, { name: "hue-rotate-in", level: 2 /* All */ }, { name: "invert-in", level: 2 /* All */ }, { name: "blur-in", level: 2 /* All */ }, { name: "saturate-in", level: 2 /* All */ }];
-var coldStatesrep = [{ name: "grayscale", level: 1 /* Basic */ }, { name: "sepia", level: 1 /* Basic */ }, { name: "contrast", level: 2 /* All */ }, { name: "hue-rotate", level: 2 /* All */ }, { name: "invert", level: 2 /* All */ }, { name: "blur", level: 2 /* All */ }, { name: "saturate", level: 2 /* All */ }];
-var textStylesrep = [{ name: "rainbow", level: 2 /* All */ }, { name: "retro", level: 2 /* All */ }, { name: "text-style1", level: 1 /* Basic */ }, { name: "inset", level: 1 /* Basic */ }, { name: "tri-dimension", level: 1 /* Basic */ }];
-var textAnimesrep = [{ name: "neon-glow", level: 1 /* Basic */ }, { name: "spin-around", level: 1 /* Basic */ }, { name: "space-in-out", level: 1 /* Basic */ }, { name: "pass-by", level: 2 /* All */ }, { name: "skew-in", level: 2 /* All */ }];
+﻿
+var inAnimationsrep = inAnimationsrep || [];
+var outAnimationsrep = outAnimationsrep || [];
+var coldAnimationsrep = coldAnimationsrep || [];
+var coldStatesrep = coldStatesrep || [];
+var textStylesrep = textStylesrep || [];
+var textAnimesrep = textAnimesrep || [];
+
+var slideShowObject = slideShowObject || {};
+
+var typingObject = {
+    minimum: 100,
+    maximum: 1200,
+    minFont: 14,
+    maxFont: 80,
+    fontRatio: 15
+}
 
 
+/*var typingObject = {
+    minimum: 200,
+    maximum: 1200,
+    minFont: 20,
+    maxFont: 80,
+    fontRatio: 12
+}*/
 
 var Run = function () {
     var sd = slideShowObject;
     //music
-    $("#music").trigger('play');
+    if (sd.AudioObject) {
+        sd.AudioObject.play();
+    }
+    if (sd.Poster) {
+        $(".Poster").hide();
+    }
+    
     //backgrounds
     var backgrounds = sd.Backgrounds.map(function (e) { return e.path; });
     if (sd.backgroundbetween) {
@@ -32,32 +56,49 @@ var Run = function () {
     backgrounsimages.reverse();
     var timeOuts = [];
     //welcome to the new mechanism!!
-    var slides = sd.Images.map(function (e) { return { path: e }; }).concat(sd.Slides);
+    var slides = sd.SlideSegments;
     if (backgrounsimages.length > 0)
     {
         var SlideFunction = function (index, slides)
         {
             var current = slides[index];
             var time = current.lifetime ? current.lifetime * 1000 : StandardIntervalLifeTime;
+
             if (current.text) {
                 var textStyle = textStyles.length > 0 ? textStyles[randArr(textStyles)] : "";
                 var textAnimation = textAnimes.length > 0 ? textAnimes[randArr(textAnimes)]: "";
                 $("#textForSlides").html(current.text).addClass("subtitles").addClass(textStyle).addClass(textAnimation);
+                $('#allContent').flowtype(typingObject);
             }
             //the setTimeout is meant to remove current slide and call the next
             setTimeout(function () {
                 var inAnimation; 
                 var outAnimation;
-                console.log("index is " + index);
                 //remove this slide
-                if (outAnimations.length == 0) {
+                if (outAnimations.length == 0 && coldAnimations.length == 0) {
                     $(backgrounsimages[index]).removeClass("visible");
                     $("#textForSlides").removeClass().html("");
+                }
+                else if (outAnimations.length == 0 && coldAnimations.length != 0) {
+                    var random = randArr(coldAnimations);
+                    var coldAnimation = coldAnimations[random];
+                    var coldState = coldStates[random];
+                    coldState = coldState === undefined ? "" : coldState;
+                    var filterDelay = StandardAnimationTime;
+                    $(backgrounsimages[index]).removeClass(formerInAnimation).addClass(coldAnimation);
+                    if (sd.backgroundbetween) {
+                        var url = backgrounds[randArr(backgrounds)];
+                        $("body").css("background-image", "url(" + url + ")");
+                    }
+                    setTimeout(function () {
+                        $(backgrounsimages[index]).removeClass(coldAnimations[random]).addClass(coldStates[random]);
+                        $("#textForSlides").removeClass().html("");
+                        $(backgrounsimages[index]).removeClass("visible");
+                    }, filterDelay);
                 }
                 else {
                     outAnimation = outAnimations[randArr(outAnimations)];
                     var formerInAnimation = index > 0 ? slides[index].animation : "";
-                    console.log("former animation was " + formerInAnimation);
                     var filterDelay = 0;
                     var random = randArr(coldAnimations);
                     if (sd.Filters > 0) {
@@ -81,7 +122,9 @@ var Run = function () {
                     
                     
                 }
-                if (index >= slides.length - 1) {
+
+                //termination
+                if (index >= backgrounsimages.length-1/*slides.length - 1*/) {
                     if (sd.CallBack.Function) {
                         window.parent[sd.CallBack.Function].apply(this, sd.CallBack.Params);                        
                     }                    
@@ -100,8 +143,6 @@ var Run = function () {
                 else {
                     inAnimation = inAnimations[randArr(inAnimations)];
                     slides[index + 1].animation = inAnimation;
-                    console.log(slides);
-                    console.log("attached animation is " + slides[index + 1].animation);
                     var wait = StandardAnimationTime;
                     wait = sd.backgroundbetween ? wait + StandardAnimationTime : wait;
                     wait = sd.Filters > 0 ? wait + StandardAnimationTime : wait;
@@ -133,7 +174,9 @@ var Run = function () {
                 textElement.attr("style", newStyle);
             }
             else {
-                textElement.addClass("freeTexts");
+                var textStyle = textStyles.length > 0 ? textStyles[randArr(textStyles)] : "";
+                textElement.addClass("freeTexts "+ textStyle);
+                $('#allContent').flowtype(typingObject);
             }            
             var time = current.lifetime ? current.lifetime * 1000 : 2000;
             setTimeout(function () {
@@ -149,15 +192,15 @@ var Run = function () {
 };
 
 var Play = function () {
-    var play=$('#play');
+    var play=$('#play .fa');
     if (play) {
-        play.css('color', 'red').attr('disabled', 'disabled');
+        play.css('color', 'rgba(95, 142, 236, 0.3)').attr('disabled', 'disabled');
     };
     Run();
 };
 
 var Stop = function () {
-    var play = $('#play');
+    var play = $('#play .fa');
     if (play) {
         play.css('color','').removeAttr('disabled');;        
     };
@@ -183,9 +226,11 @@ var filterByLevel = function (ds, level) {
 }
 
 var cleanUp = function () {
-    if (slideShowObject.Audio !== "") {
-        document.querySelector('#music').pause();
-        document.querySelector('#music').currentTime = 0
+    if (slideShowObject.Poster) {
+        $(".Poster").show();
+    }
+    if (slideShowObject.AudioObject) {
+        slideShowObject.AudioObject.stop();
     }
     
     clearAllTimeouts();
@@ -196,11 +241,16 @@ var cleanUp = function () {
     })
     $(backgroundimages[0]).addClass("visible");
     var freeTexts=$("#freeTexts");
-    if (freeTexts) { freeTexts.html("").removeClass("").addClass("freeTexts"); }
+    if (freeTexts.length > 0 ) { freeTexts.html("").removeClass("").addClass("freeTexts"); }
     var textForSlides = $("#textForSlides");
-    if (textForSlides) { textForSlides.html("").removeClass("").addClass("subtitles"); }
+    if (textForSlides.length > 0) { textForSlides.html("").removeClass("").addClass("subtitles"); }
 }
 
+
+var changeAnimDuration = function (element,duration){
+    var vendors = ["-webkit-", "-moz-", "-o-", ""];
+    vendors.forEach(function (ven) { $(element).css(ven + "animation-duration", duration + "s"); });
+}
 
 
 //http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
@@ -270,92 +320,102 @@ window.clearAllIntervals = function () {
 /*******************  set functions   **************************/
 
 
-AddImages = function (images) {
+var AddImages = function (images) {
     var containerDiv = $("#containerDiv")
     images.forEach(function (e) {
-        slideShowObject.Images.push(e);
+        slideShowObject.SlideSegments.push({ path: e });
         var image = document.createElement("img");
         image.src = e;
         image.className = "background";
-        containerDiv.append(image);
+        containerDiv.prepend(image);
     });
 }
 
-AddSlides = function (slides) {
-    var containerDiv = $("#containerDiv")
+var AddSlides = function (slides) {
+    var containerDiv = $("#containerDiv");
     slides.forEach(function (e) {
-        slideShowObject.Slides.push(e);
+        slideShowObject.SlideSegments.push(e);
         var slide = document.createElement("img");
-        slide.src = item.path;
+        slide.src = e.path;
         slide.className = "background";
-        containerDiv.append(slide);
+        containerDiv.prepend(slide);
     });
+    if (slides.some(function(e) { return !!e.text; })) {
+        $("body").append("<span id='textForSlides' class='subtitles'></span>");
+    }
 }
 
-AddSlideTexts = function (texts) {
+var AddSlideTexts = function (texts) {
     texts.forEach(function (e) { slideShowObject.SlideTexts.push(e); });
-    //TODO do add the free text div if not exists!
+    if ($('#freeTexts').length == 0) {
+        $("body").append("<div id='freeTexts' class='freeTexts'></div>");
+    }
 }
 
 
-AddBackGrounds = function (backGrounds) {
+var AddBackGrounds = function (backGrounds) {
     backGrounds.forEach(function (e) { slideShowObject.Backgrounds.push(e); })
 }
 
-SetAnimationLevel = function (level) {
+var SetAnimationLevel = function (level) {
     slideShowObject.Animations = level;
 }
 
-SetFilters = function (level) {
+var SetFilters = function (level) {
     slideShowObject.Filters = level;
 }
 
-SetTextStyles = function (level) {
+var SetTextStyles = function (level) {
     slideShowObject.TextStyles = level;
 }
 
-SetTextAnimes = function (level) {
+var SetTextAnimes = function (level) {
     slideShowObject.TextAnimes = level;
 }
 
-SetAudio = function (audio) {
-    slideShowObject.Audio = audio;
-    if ($("audio").length == 0) {
-        $("#containterDiv").append("<audio id='music'><source src=' " + slideShowObject.Audio + "' type='audio/mpeg' /></audio>");
-        document.querySelector("source").addEventListener('load', function () {
-            document.querySelector('#music').pause();
-            document.querySelector('#music').currentTime = 0;
-            document.querySelector('#music').play();
-        });
-        /*$("#music").on("load", function () {
-            
-        }).each(function () {
-            if (this.complete) $(this).load();
-        });*/
-        
+
+var SetAudio = function (audio) {
+    if(slideShowObject.AudioObject){
+        slideShowObject.AudioObject.stop();
+    }   
+    if (!audio) {
+        slideShowObject.AudioObject = null;
+        $("#volume").remove();
+        $(".rangeslider").remove();
+        $("#range").remove();
     }
     else {
-        $("#music source").attr("src", slideShowObject.Audio);
-        $("#music").on("load", function () {
-            document.querySelector('#music').pause();
-            document.querySelector('#music').currentTime = 0;
-            document.querySelector('#music').play();
-        }).each(function () {
-            if (this.complete) $(this).load();
-        });
+        slideShowObject.AudioObject = new Howl({ urls: [audio] });
+        slideShowObject.AudioObject.play();
+        if ($("#volume").length == 0) {
+            $("#controlBar").append('<span id="volume"   onmouseover= "showVolumeSlider();" onmouseout= "hideVolumeSlider();" > <i class="fa fa-volume-up"> </i></span>' +
+            '<input type="range" id="range" min="0"  max="100" step="5" data-orientation="vertical"  />');
+        }       
+        setTimeout(fixRangeSlider,100);
     }
-
 }
 
-SetCallBack = function (CallBackObject) {
+var SetVolume = function (volume) {
+    if (slideShowObject.AudioObject) {
+        slideShowObject.AudioObject.volume(volume / 100);
+        $("#volume i").removeClass().addClass(setVolumeIcon(volume));
+        $("#range").val(volume).rangeslider('update', true);
+    }
+    else
+    {
+        console.warn("do not try to set the volume of a slideshow with no audio porperty");
+    }
+}
+
+var SetCallBack = function (CallBackObject) {
     slideShowObject.CallBack = CallBackObject;
 }
 
-SetLoop = function (loop) {
+var SetLoop = function (loop) {
     slideShowObject.Loop = loop;
 }
 
-SetBackgroundBetween = function (showBackground) {
+var SetBackgroundBetween = function (showBackground) {
     slideShowObject.backgroundbetween = showBackground;
     if (showBackground === false) {
         $("body").css("background-image", "");

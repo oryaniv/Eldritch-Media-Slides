@@ -1,4 +1,4 @@
-var inAnimationsrep = [
+﻿var inAnimationsrep = [
     { name: "normalsize", level: 2 /* Standard */ },
     { name: "background-fade-in", level: 1 /* Basic */ },
     { name: "rotatex-in", level: 2 /* Standard */ },
@@ -77,14 +77,14 @@ var outAnimationsrep = [
 
 
 var coldAnimationsrep = [
-    { name: "gray-in", level: 1 /* Basic */ },
-    { name: "sepia-in", level: 1 /* Basic */ },
-    { name: "contrast-in", level: 2 /* All */ },
-    { name: "hue-rotate-in", level: 2 /* All */ },
-    { name: "invert-in", level: 2 /* All */ },
-    { name: "blur-in", level: 2 /* All */ },
-    { name: "saturate-in", level: 2 /* All */ },
-    //animate.css
+     { name: "gray-in", level: 1 /* Basic */ },
+     { name: "sepia-in", level: 1 /* Basic */ },
+     { name: "contrast-in", level: 2 /* All */ },
+     { name: "hue-rotate-in", level: 2 /* All */ },
+     { name: "invert-in", level: 2 /* All */ },
+     { name: "blur-in", level: 2 /* All */ },
+     { name: "saturate-in", level: 2 /* All */ },
+     //animate.css
      { name: "animated wobble", level: 3 },
      { name: "animated flip", level: 3 },
      { name: "animated swing", level: 3 },
@@ -94,7 +94,6 @@ var coldAnimationsrep = [
      { name: "animated shake", level: 3 },
      { name: "animated tada", level: 3 },
      { name: "animated jello", level: 3 },
-
 ];
 
 
@@ -110,16 +109,18 @@ var coldStatesrep = [
 
 
 var textStylesrep = [
-    { name: "rainbow", level: 2 /* All */ },
-    { name: "retro", level: 2 /* All */ },
-    { name: "text-style1", level: 1 /* Basic */ },
-    { name: "inset", level: 1 /* Basic */ },
-    { name: "tri-dimension", level: 1 /* Basic */ },
+    { name: "rainbow", level: 3 /* All */ },
+    { name: "retro", level: 3 /* All */ },
+    { name: "text-style1", level: 2 /* Basic */ },
+    { name: "inset", level: 2 /* Basic */ },
+    { name: "tri-dimension", level: 2 /* Basic */ },
     //no style
-    //{ name: "tri-dimension", level: 0 /* Basic */ },
-    //{ name: "tri-dimension", level: 0 /* Basic */ },
-    //{ name: "tri-dimension", level: 0 /* Basic */ },
-    //{ name: "tri-dimension", level: 0 /* Basic */ },
+    { name: "greenText", level: 1 /* Basic */ },
+    { name: "blueText", level: 1 /* Basic */ },
+    { name: "redText", level: 1 /* Basic */ },
+    { name: "yellowText", level: 1 /* Basic */ },
+    { name: "grayText", level: 0 /* Basic */ },
+    { name: "whiteText", level: 0 /* Basic */ },
 ];
 
 
