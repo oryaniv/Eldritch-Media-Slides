@@ -29,5 +29,9 @@ soon to be built...
 
 ## License
 
+copyright (c) 2016 Or Yaniv. the Eldritch project
+
+Eldritch Media Slides is released under the MIT license.
+
 ---
 ** Important ** : please read the Documentation in the website first, it will give you a good start and explain all you need to know.
