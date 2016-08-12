@@ -1,0 +1,83 @@
+.exampleRect {
+  min-height: 50px;
+  background: #232020;
+  color: #CAC5BF;
+  padding-left: 5px;
+  direction: ltr !important;
+  text-align: left;
+  /*padding: 3% 0% 3% 0%;*/
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 1em; }
+  .exampleRect .hljs {
+    overflow: hidden; }
+
+table {
+  border: 0.15em #9A750D solid;
+  border-collapse: collapse;
+  min-width: 100%;
+  background-color: rgba(255, 255, 255, 0.87); }
+  table th {
+    border: 0.15em #9A750D solid;
+    padding: 0.5em; }
+  table td {
+    border: 0.15em #9A750D solid;
+    padding: 0.5em; }
+  table td.exampleTableRect {
+    color: #CAC5BF;
+    background-color: #232020;
+    direction: ltr !important;
+    text-align: left;
+    font-size: 1em;
+    padding: 0; }
+    table td.exampleTableRect .hljs {
+      overflow: hidden; }
+  table td:nth-child(1) {
+    font-weight: bold; }
+
+h3 em {
+  color: purple;
+  margin-right: 0.5em; }
+
+h3 .module {
+  color: green;
+  margin-right: 0.5em;
+  font-style: italic; }
+
+.version-details {
+  margin-left: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 1em; }
+  .version-details div {
+    margin-bottom: 1em; }
+    .version-details div i {
+      margin-right: 0.75em; }
+    .version-details div span {
+      font-style: italic; }
+
+#download {
+  width: 10em;
+  height: 3em;
+  border-radius: 15%;
+  text-align: center;
+  padding: 1em 1em 1em 1em;
+  margin-left: 28em;
+  background: -webkit-linear-gradient(-70.01689deg, #cb60b3 0, #c146a1 50%, #a80077 51%, #db36a4 100%);
+  background: -moz-linear-gradient(160.01689deg, #cb60b3 0, #c146a1 50%, #a80077 51%, #db36a4 100%);
+  background: linear-gradient(160.01689deg, #cb60b3 0, #c146a1 50%, #a80077 51%, #db36a4 100%);
+  background-position: 50% 50%;
+  border-color: gray; }
+  #download a {
+    text-decoration: none;
+    font: normal 16px/1 "bad-script", Helvetica, sans-serif;
+    color: white;
+    letter-spacing: 2px; }
+
+.v-icon {
+  color: green; }
+
+.b-icon {
+  color: yellow; }
+
+.r-icon {
+  color: purple; }

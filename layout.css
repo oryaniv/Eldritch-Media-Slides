@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
+body {
+  background: url("mountsdouble.jpg") repeat-y;
+  background-size: 100% auto; }
+
+body:after {
+  content: "beta";
+  position: absolute;
+  width: 80px;
+  height: 25px;
+  background: #7026b4;
+  top: 10px;
+  left: -25px;
+  text-align: center;
+  font-size: 13px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  line-height: 27px;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.eldritch-title {
+  font: italic normal normal 100px/1 "lusitana", Helvetica, sans-serif;
+  color: #dc0302;
+  text-align: center; }
+
+.media-slides-title {
+  font: normal 48px/1 "bad-script", Helvetica, sans-serif;
+  color: #C70767;
+  margin-left: 10%;
+  text-align: center; }
+
+/*********     devices       ************ */
+@media only screen and (max-device-width: 600px) {
+  .main-body {
+    width: 100%; }
+  .list-container {
+    height: 12em; }
+    .list-container ul li {
+      font: bold italic 2.75em/1 "ubuntu", Helvetica, sans-serif;
+      padding-right: 0.4em;
+      padding-left: 0.4em;
+      padding-bottom: 0.4em; }
+  .flexme {
+    flex-wrap: wrap;
+    justify-content: center; }
+  .content {
+    font: normal 1.2em/1 "ubuntu", Helvetica, sans-serif;
+    padding: 1em 1em 2em 1em; }
+    .content pre {
+      font: normal 2.5em/1 "ubuntu", Helvetica, sans-serif; } }
+
+/*************    desktop      ************/
+@media only screen and (min-device-width: 600px) {
+  .main-body {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto; }
+  .list-container {
+    height: 2.2em; }
+    .list-container ul li {
+      font: bold italic 1.3em/1 "ubuntu", Helvetica, sans-serif;
+      padding: 0.2em; }
+  .flexme {
+    justify-content: center; }
+  .content {
+    font: normal 1.1em/1 "ubuntu", Helvetica, sans-serif;
+    padding: 1em; } }
+
+.main-body {
+  box-shadow: 0 0 2.5em #29252D;
+  background-image: url("http://wallpaperswa.com/thumbnails/detail/20120403/black%20textures%20background%201920x1200%20wallpaper_www.wallpaperwa.com_19.jpg");
+  background-size: 100% 100%;
+  min-height: 100vh;
+  /*border-radius:2%;*/ }
+  .main-body p {
+    line-height: 1.4em; }
+  .main-body li {
+    line-height: 1.4em; }
+
+.list-container {
+  background-image: url("wood-texture.jpg");
+  background-position: 50% 50%;
+  border-radius: 2%;
+  -webkit-filter: brightness(2); }
+  .list-container ul {
+    list-style: none;
+    padding: 1% 3% 0 0; }
+    .list-container ul li {
+      display: inline;
+      margin-left: 2.5em;
+      text-align: center;
+      /* font: bold italic 1.2em/1 "ubuntu", Helvetica, sans-serif; */ }
+      .list-container ul li a {
+        text-decoration: none !important;
+        color: #070708; }
+        .list-container ul li a:hover {
+          color: teal; }
+
+.flexme {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.content {
+  font: normal 1.1em/1 "ubuntu", Helvetica, sans-serif;
+  padding: 1em;
+  color: white; }
+
+.side-menu {
+  position: fixed;
+  left: 0;
+  top: 25%;
+  width: 20%;
+  background-color: #29252D; }
+  .side-menu ul {
+    list-style: none; }
+    .side-menu ul li {
+      padding: 1% 3% 3% 1%; }
+      .side-menu ul li a {
+        color: grey;
+        font: normal 1.1em/1 "ubuntu", Helvetica, sans-serif; }
+        .side-menu ul li a:hover {
+          color: green; }
