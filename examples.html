@@ -1,0 +1,251 @@
+
+<html></html><head><link rel="stylesheet" href="layout.css"/><link rel="stylesheet" href="content.css"/><link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/oryaniv/Eldritch-Media-Slides/master/TestImages/hl.css"/><title>Eldritch Media Slides   </title></head><body><div class="eldritch-title">Eldritch</div><div class="media-slides-title">Media Slides</div><div class="main-body"><div class="list-container"><ul class="flexme"><li><a href="/home">Home</a></li><li><a href="/quickstart">Quick Start</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/examples">Examples</a></li><li><a href="/versiondetails">Version Details</a></li></ul></div><div class="content"> <h3>Examples</h3>
+
+<p>now, after learning through the amazing abilities of Eldritch media slides
+(or you just jumped here right away because no patience)
+let's do some real world usage, just to give a little taste of might you may want to do</p>
+
+<h4>looking for vacation?</h4>
+
+<p>let's do it even more complex, and harness the help of google maps to give some rich experience to 
+the example. We will build a web page containing a map, several marked locations, and for each
+of these locations, we'll have a nice slideshow appearing right when we click on it.</p>
+
+<p>sounds nice?
+great, then let's get on with it.</p>
+
+<h4>simple google maps start-up</h4>
+
+<p>first comes some html and styiling, just so we have some start-up frame for the app:</p>
+
+<pre>
+    <code>
+        &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=windows-1252"&gt;
+
+        &lt;title&gt;Eldritch media Slides/google maps demo&lt;/title&gt;
+
+        &lt;style&gt;
+
+            body{
+                background-color:rgba(56, 24, 24, 0.88);
+            }
+
+            #map{
+                width:80%;
+                height:80%;
+                margin-left:10%;
+            }
+
+            .margins{
+                margin-left:20%;
+                margin-top:5%;
+            }
+
+            .rounded{
+                border-radius:100%;
+            }
+
+            .framed{
+                border:6px  solid rgba(26, 88, 86, 0.69);
+            }
+
+            .windowContent{
+                margin-left:10%;
+                width:80%;
+            }
+
+            h1{
+                text-align:center;
+                color:lightblue;
+                margin-top:3%;
+            }
+
+
+        &lt;/style&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;h1&gt;nice places to see&lt;/h1&gt;
+        &lt;div id="map"&gt;&lt;/div&gt;
+
+        &lt;script src="http://maps.googleapis.com/maps/api/js"&gt;&lt;/script&gt;
+        &lt;script src="https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.min.js"&gt;&lt;/script&gt;
+        &lt;/body&gt;  
+        &lt;script&gt;
+
+            // following code will be here
+
+        &lt;/script&gt; 
+      </code>        
+</pre>
+
+<p><a href="https://developers.google.com/maps/documentation/javascript/tutorial">google maps API</a> is an easy-to-use, comfortable API for showing and customizing world maps.
+let's make a basic app by harnessing its power:</p>
+
+<pre>
+    <code>
+            // some variables
+            var positions;
+            var places;
+            var descriptions;
+            var markers = [];
+            initData();
+
+            // creating a new instance ofa google map
+            var gmap = new google.maps.Map(document.getElementById("map"),{
+                center:createPoint(48.8566,2.35222),
+                zoom:5
+            });
+
+            // just a shorthand for creating a google maps point on map
+            function createPoint(x,y){
+                return new google.maps.LatLng(x,y);
+            }
+
+            // this is the data we will use in this app, it could easily be a JSON result from your backend
+            function initData(){
+                data = [
+                        {
+                            pos:createPoint(48.8566,2.35222),
+                            name:"Paris",
+                            description:"Paris (French: [pa?i] ( listen)) is the capital and most populous city of France. Situated on the Seine River in the north of the country, it is in the centre of the �le-de-France region, also known as the r�gion parisienne, Paris Region",
+                            Images: createImagesUrls('paris'),
+                            sound:"sites/france.mp3"
+                        },
+                        {
+                            pos:createPoint(51.5073509,-0.12775),
+                            name:"London",
+                            description:"London Listeni/'l?nd?n/ is the capital and most populous city of England and the United Kingdom. Standing on the River Thames in the south east of Great Britain, London has been a major settlement for two millennia",
+                            Images:createImagesUrls('london'),
+                            sound:"sites/england.mp3"
+                        },
+                        {
+                            pos:createPoint(52.520006,13.40495),
+                            name:"Berlin",
+                            description:"Berlin (/b?r'l?n/, German: [b???'li?n] ( listen)) is the capital of Germany and one of the 16 states of Germany. With a population of approximately 3.5 million people, it is the second most populous city proper and the seventh most populous urban area in the European Union",
+                            Images:createImagesUrls('berlin'),
+                            sound:"sites/germany.mp3"
+                        },
+                        {
+                            pos:createPoint(41.385063,2.1734034),
+                            name:"Barcelona",
+                            description:"Barcelona (/b??rs?'lo?n?/, Catalan: [b??s?'lon?], Spanish: [bar?e'lona]) is the capital city of the autonomous community of Catalonia in Spain and Spain's second most populated city, with a population of 1.6 million within its administrative limits",
+                            Images:createImagesUrls('barcelona'),
+                            sound:"sites/spain.mp3"
+                        }
+                    ];
+
+            }
+
+            // a shorthand for image paths
+            function createImagesUrls(name){
+                return [1,2,3,4].map(function(e){ return {path:'sites/'+name+e+'.jpg',lifetime:3} });
+            }
+
+    </code>
+</pre>
+
+<p>this will be the setup for the application. we have some data,
+and a map (run it, see for yourselves!). now, it's time add a little
+more tweaks! </p>
+
+<pre>
+    <code>
+           // creating a new instance ofa google map
+            var gmap = new google.maps.Map(document.getElementById("map"),{
+                center:createPoint(48.8566,2.35222),
+                zoom:5
+            });
+
+            // this function creates markers on the map
+            data.forEach(function(e){
+
+                // a new marker
+                var marker = new google.maps.Marker({
+                    position:e.pos
+                }); 
+                markers.push(marker);
+                var markerIndex = markers.length - 1;
+                marker.setMap(gmap);
+                windowContent = "&lt;div class='windowContent'&gt;&lt;h2 style='text-align:center;'&gt;"+ e.name +"&lt;/h2&gt;"
+                +"&lt;div&gt;"+ e.description +"&lt;/div&gt;"+"&lt;div class='margins' id='"+ slideId +"'&gt;&lt;/div&gt;&lt;/div&gt;";
+                var infoWindow = new google.maps.InfoWindow({content: windowContent});
+
+                google.maps.event.addListener(marker,'click',function(){
+                    infoWindow.open(gmap,marker);
+                });
+            });
+
+
+    </code>
+</pre>
+
+<p>don't be panicked, here's an explanation of what exactly i just did here:</p>
+
+<p>see, one basic features of the google maps API is the creation of markers,
+all i did was for each object of data declared before, i create a marker
+to be placed on the map. when a the marker is clicked, an information window 
+will be opened with relevant details.</p>
+
+<p><strong>what about your slideshow library??</strong></p>
+
+<p>right... well' let's.</p>
+
+<p>all we have now is a nice map, with some markers, that when clicked will showing
+you a window with information about the marker's location. this is nice and all
+but isn't really... exciting.
+what we'll like to have, is some color - some pictures to show the magnificense of that location.
+oh, now we get it - a slideshow!</p>
+
+<p>then here we go:</p>
+
+<pre>
+<code>
+    /* the following code is within the addListener() method mentioned before */
+
+    var slideDiv = document.querySelector("#"+slideId);
+    if(slideDiv.childNodes.length > 0){
+        slideDiv.removeChild(slideDiv.childNodes[0]);    
+    }
+    EldritchSlideShow.Create("#"+slideId,
+                                {
+                                Slides:e.Images,Size:1
+                                ,Loop:true,CssClass:'rounded framed'
+                                ,Audio: e.sound,
+                                CallBack:{Function:"animate",Params:[markerIndex]}
+                                }
+       ).Start();
+    }); 
+
+
+    function animate(index){
+        var marker = markers[index];
+        marker.setAnimation(google.maps.Animation.DROP);
+        setTimeout(function(){marker.setAnimation(google.maps.Animation.DROP);},1000);
+    }
+</code>
+</pre>
+
+<p>examine this code: first we take the html element with the "slideId" id as
+the container element for the slide. then, we make sure it is empty (if there is already a slideshow
+within, we'd first like to remove it before creating another).
+Then, we create a slideshow from the data supplied to us at the start and run it.</p>
+
+<p>Note also that we use the <em>callback</em> propery of eldritch media slides - it is
+set to use the animate() method, which animets the google marker at the end of the
+slidshow's run.</p>
+
+<p>now let's span out a live demo:</p>
+
+<p>(for a better view, click on "edit on codepen")</p>
+
+<p data-height="462" data-theme-id="0" data-slug-hash="XKyXbY" data-default-tab="js,result" data-user="oryaniv" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/oryaniv/pen/XKyXbY/">Eldritch Media Slides - google maps</a> by or yaniv (<a href="http://codepen.io/oryaniv">@oryaniv</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h3>conclusion</h3>
+
+<p>we've seen how to use eldritch media slides to enhance the user experience in a simple app.
+But there is so much more you can do, to drastiacally change the way your web page feels!</p>
+
+<p>be sure to try more combinations, EMS is a tool not to be taken lightly!</p></div><a href="https://github.com/oryaniv/Eldritch-Media-Slides"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a></div></body><script type="text/javascript" async="async" script-name="lusitana" src="http://use.edgefonts.net/lusitana.js"></script><script type="text/javascript" async="async" script-name="bad-script" src="http://use.edgefonts.net/bad-script.js"></script><script type="text/javascript" async="async" script-name="ubuntu" src="http://use.edgefonts.net/ubuntu.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
