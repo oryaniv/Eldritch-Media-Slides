@@ -1,0 +1,110 @@
+
+<html></html><head><link rel="stylesheet" href="layout.css"/><link rel="stylesheet" href="content.css"/><link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/oryaniv/Eldritch-Media-Slides/master/TestImages/hl.css"/><title>Eldritch Media Slides   </title></head><body><div class="eldritch-title">Eldritch</div><div class="media-slides-title">Media Slides</div><div class="main-body"><div class="list-container"><ul class="flexme"><li><a href="/home">Home</a></li><li><a href="/quickstart">Quick Start</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/examples">Examples</a></li><li><a href="/versiondetails">Version Details</a></li></ul></div><div class="content"> <h3>Installation</h3>
+
+<p>getting started with Eldritch Media Slides is easy as pie. currently there are two alternatives:</p>
+
+<h4>using CDN</h4>
+
+<p>In order to use Eldritch Media Slides while serving the script and style files straight from the cloud, just
+include the following in your page:</p>
+
+<pre>
+    <code>
+        &lt;script src="https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.js"&gt;
+        &lt;/script&gt;
+    </code>
+</pre>
+
+<p>and that's it, you have all you need, just use the API and have fun!</p>
+
+<h4>using local files</h4>
+
+<p>Eldritch Media Slides can also be served directly from your file system. in order to do this, first download
+the required files here:</p>
+
+<p><button id="download">
+<a href="http://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.js" download>
+ Download
+</a>
+</button></p>
+
+<p>include EldritchMediaSlides.js in your page, and then include the following in your script:
+ <pre>
+    <code>
+        EldritchSlideShow.Config("stylePath","myServerPath/styles"); <br />
+        EldritchSlideShow.Config("scriptPath","myServerPath/scripts"); <br />
+    </code>
+</pre></p>
+
+<p>while "myServerPath/styles" is assumed to be the path where you will serve the style files,
+and should also contain the css file you downloadad,
+and "myServerPath/scripts" is assumed to be the path where you will serve the script files,
+and should also contain the javascript file you downloadad.</p>
+
+<p>the purpose of this is to make sure that when a slideshow is created, it will look for the files
+it needs just where you want it to be served from.</p>
+
+<p>now, let's get to doing some cool stuff...</p>
+
+<h3>creating your first Eldritch slide show</h3>
+
+<h4>the most basic</h4>
+
+<p>well now, open up a fresh html, include the source files (however you chose to) and write the following js code:</p>
+
+<pre>
+    <code>
+        EldritchSlideShow.Create(
+            {Images:
+                    [
+                        "img1.jpg",
+                        "img2.jpg",
+                        "img3.jpg",
+                        "img4.jpg",
+                        "img5.jpg"
+                    ]
+
+            }).Start();     
+
+    </code>
+</pre>
+
+<p>assuming that the strings in the code above are paths or urls to your images.
+now run the code, aaand...</p>
+
+<p>you don't believe me? well there you go:</p>
+
+<p data-height="300" data-theme-id="0" data-slug-hash="RRbwWL" data-default-tab="js,result" data-user="oryaniv" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/oryaniv/pen/RRbwWL/">Eldritch-Media-Slides basic</a> by or yaniv (<a href="http://codepen.io/oryaniv">@oryaniv</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p><br/><br/>
+<strong>dude, that's like... <em>boring</em>     where's all the cool stuff you promised?</strong></p>
+
+<p>why, glad you asked! the above is pretty basic, but just look how a few lines can really sweeten the deal:</p>
+
+<p data-height="360" data-theme-id="0" data-slug-hash="xOKxqR" data-default-tab="js,result" data-user="oryaniv" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/oryaniv/pen/xOKxqR/">Eldritch-Media-Slides cooler one</a> by or yaniv (<a href="http://codepen.io/oryaniv">@oryaniv</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p><strong>Alright! i want more!</strong></p>
+
+<p>good! then, maybe you'd be glad to know that this is just the beginning.
+here, another one on me, just see the power of eldritch:</p>
+
+<p>(hover on the slide to see the controls)</p>
+
+<p data-height="360" data-theme-id="0" data-slug-hash="aZobQW" data-default-tab="js,result" data-user="oryaniv" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/oryaniv/pen/aZobQW/">Eldritch-Media-Slides Power slide</a> by or yaniv (<a href="http://codepen.io/oryaniv">@oryaniv</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p><strong>right, got it. so, what else can i do?</strong></p>
+
+<p>well, a lot more stuff, actually. Until now we have only seen how to create a slideshow, but
+we didn't really see the many ways you can manipulate and adjust it to fit your own webpage.
+remember, this is not just a widget, it is a tool, which a great mind can turn into a 
+powerful agent for awesome user experience. Use your imagination!</p>
+
+<p>and read the documentation, I really recommend that.</p>
+
+<p>Have Fun!</p></div><a href="https://github.com/oryaniv/Eldritch-Media-Slides"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a></div></body><script type="text/javascript" async="async" script-name="lusitana" src="http://use.edgefonts.net/lusitana.js"></script><script type="text/javascript" async="async" script-name="bad-script" src="http://use.edgefonts.net/bad-script.js"></script><script type="text/javascript" async="async" script-name="ubuntu" src="http://use.edgefonts.net/ubuntu.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
