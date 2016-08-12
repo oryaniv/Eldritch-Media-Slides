@@ -5,7 +5,7 @@ function startNext(sd){
 }
 
 function goHome(){
-    location.href="/home";
+    location.href="/Eldritch-Media-Slides/home";
 }
 
 var slides1 = [6,7,8,9].map(function(e){return {path:bpath+"img"+e+".jpg",lifetime:2}});
