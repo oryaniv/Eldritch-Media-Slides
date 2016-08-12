@@ -1,0 +1,1119 @@
+
+<html></html><head><link rel="stylesheet" href="layout.css"/><link rel="stylesheet" href="content.css"/><link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/oryaniv/Eldritch-Media-Slides/master/TestImages/hl.css"/><title>Eldritch Media Slides   </title></head><body><div class="eldritch-title">Eldritch</div><div class="media-slides-title">Media Slides</div><div class="main-body"><div class="list-container"><ul class="flexme"><li><a href="/home">Home</a></li><li><a href="/quickstart">Quick Start</a></li><li><a href="/documentation">Documentation</a></li><li><a href="/examples">Examples</a></li><li><a href="/versiondetails">Version Details</a></li></ul></div><div class="content"> <h2>Documentation</h2>
+
+<p>listed here is all you need to know about the methods and
+properties supplied to you by Eldritch media slides.</p>
+
+<h3><span class="module">Module</span>  EldritchSlideShow</h3>
+
+<p>EldritchSlideShow is the global object suppldied to you by the library.
+This object is used primarily for the creation of new slidshows, and also
+for configuartion of global properties for all slideshows.</p>
+
+<h4>methods</h4>
+
+<p><em>Create()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>Create(queryString : string (optional), sd : SlideShow)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>creates a brand new slideshow, and attaches it to the target element, or appends it to the
+            body if no queryString was supplied.
+        </td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>SlideShowRemote object</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            <ul>
+                <li>queryString(optional) : a jquery/css string indicating an html element to contain the slideshow</li>
+                <li>SlideShow : an object containing all slideshow properties</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td class="exampleTableRect">
+            <div >
+               <pre>
+                <code>
+
+                   <div id="container"></div> 
+
+                   EldritchSlideShow.Create("#container",{
+                        Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],
+                        Size:4,
+                        Animations:3,
+                        Filters:2,
+                        Controls:1
+                   })
+
+                </code>
+               <pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>Config()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>Config(property : string,value : string)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>
+            changes the path/url used by Eldritch media slides to find script and style files
+        </td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>void</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            <ul>
+                <li>property : "stylePath" for changing css lookup and "scriptPath" for changing jd lookup</li>
+                <li>value : the new path/url should be used to get the files/li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td class="exampleTableRect">
+            <div >
+               <pre>
+                <code>
+
+                    EldritchSlideShow.Config("stylePath","myServerPath/styles");                 
+                    EldritchSlideShow.Config("scriptPath","myServerPath/scripts"); 
+
+                </code>
+               <pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<h3><em>Class</em> SlideShow</h3>
+
+<p>objects of this class are the material used to create new slideshows, and are given as parameters
+to the create() method.</p>
+
+<h3>fields</h3>
+
+<table>
+<thead>
+    <tr>
+        <th>name : type</th>
+        <th>description</th>
+        <th>default value</th>
+    </tr>
+</thead>
+<tr>
+    <td>Images: Array&lt;string&gt;</td>
+    <td><div>an array of paths/urls for images</div></td>
+    <td>[]</td>
+</tr>
+<tr>
+    <td>Slides: Array&lt;Slide&gt;</td>
+    <td><div >an Array of objects of Slide Class</div></td>
+    <td>[]</td>
+</tr>
+<tr>
+    <td>SlideTexts : Array&lt;SlideTitles&gt;</td>
+    <td><div >an Array of objects of Slide Title Class</div></td>
+    <td>[]</td>
+</tr>
+<tr>
+    <td>Backgrounds : Array&lt;BackGround&gt;</td>
+    <td><div class="rtl">an Array of objects of Background Class</div></td>
+    <td>[]</td>
+</tr>
+<tr>
+    <td>Animations: number</td>
+
+    <td>
+    a number describing the level of slide animations allowed
+        <ul>
+            <li>0 : None</li>
+            <li>1 : basic</li>
+            <li>2 : standard</li>
+            <li>3 : all</li>
+        </ul>
+    </td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>Filters: number</td>
+    <td>
+    a number describing the level of filters/middle animations allowed
+        <ul>
+            <li>0 : None</li>
+            <li>1 : basic</li>
+            <li>2 : standard</li>
+            <li>3 : all</li>
+        </ul>
+    </td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>TextStyles: number</td>
+    <td>
+        a number describing which pre-defined text styls are allowed
+        <ul>
+            <li>0 : Normal</li>
+            <li>1 : basic</li>
+            <li>2 : standard</li>
+            <li>3 : flamboyant</li>
+        </ul>
+    </td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>TextAnimes: number</td>
+    <td>
+    a number describing which text animations are allowed
+        <ul>
+            <li>0 : None</li>
+            <li>1 : basic</li>
+            <li>2 : all</li>                  
+        </ul>
+    </td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>Size: number</td>
+    <td>
+        a number defining the a fixed size for the slideshow
+        <ul>
+            <li>0 : not specified*</li>
+            <li>1 : small</li>
+            <li>2 : medium</li>
+            <li>3 : large</li>
+            <li>4 : Fullscreen</li>
+        </ul>
+    </td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>Audio : string</td>
+    <td><div>a path/url for an audio track for the slideshow</div></td>
+    <td>""</td>
+</tr>
+<tr>
+    <td>Loop : boolean</td>
+    <td>determines if slideshow will play in loops</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>Controls : number</td>
+    <td>
+    determines if control buttons will appear on the slideshow for the user to control it           
+        <ul>
+            <li>0 : not visible</li>
+            <li>1 : visible only when mouse over</li>
+            <li>2 : always visible</li>
+        </ul>
+     </td>               
+    <td>0</td>
+</tr>
+<tr>
+
+    <td>backgroundbetween : boolean</td>
+    <td>determines if a background will appear between slide transitions</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>CssClass : string</td>
+    <td><div>a Css class to be attached to the slideshow element. this can override the size property defined above</div></td>
+    <td>""</td>
+</tr>
+<tr>
+    <td>CallBack : object</td>
+    <td>an object including a function name and an array of parameters. the function will be called with the supported parameters when the slideshow ends</td>
+    <td>{}</td>
+</tr>
+<tr>
+    <td>Poster : string</td>
+    <td><div>a url/path to an image to appear as a placeholder for the slideshow when in does not play</div></td>
+    <td>""</td>
+</tr>
+</table>
+
+<h3><em>Class</em> Slide</h3>
+
+<p>objects of this class are the composition of an image, and some additional properties that lets you
+decide how to show it as a slide</p>
+
+<h3>fields</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>name : type</th>
+            <th>description</th>
+            <th>default value</th>
+        </tr>
+
+        <tr>
+            <td>path : string</td>
+             <td><div>a path/url to an image resource</div></td>
+            <td>""</td>
+        </tr>
+        <tr>
+            <td>text : string</td>
+            <td>text to appear on the slide. At default it will appear on the center of the lower half of the screen.</td>
+            <td>""</td>
+        </tr>
+        <tr>
+            <td>lifetime : number</td>
+            <td>time (in seconds) until the slide will start to leave the screen</td>
+            <td>8</td>
+        </tr>
+    </thead>
+</table>
+
+<h3><em>Class</em> SlideTitle</h3>
+
+<p>Objects of this class represent custom texts that will appear on the slideshow with no regard to the slides.
+This allows you to add your custom comments to the show where ever you want them,</p>
+
+<h3>fields</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>name : type</th>
+            <th>description</th>
+            <th>default value</th>
+        </tr>
+
+        <tr>
+            <td>text : string</td>
+             <td><div>the text to appear</div></td>
+            <td>""</td>
+        </tr>
+
+        <tr>
+            <td>lifetime : number</td>
+            <td>time (in seconds) until the text will disappear</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>style : string</td>
+            <td> a css string, formatted as attribute:value;attribute:value that will be attached to the text element. this allow you to fully customize the text labels </td>
+            <td>""</td>
+        </tr>
+    </thead>
+</table>
+
+<h3><em>Class</em> BackGround</h3>
+
+<p>if the backgroundbetween field of the SlideShow class is on, a black background will appear between slides.
+using objects of this class can override the black screen and replace it with a custom image.</p>
+
+<h3>fields</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>name : type</th>
+            <th>description</th>
+            <th>default value</th>
+        </tr>
+
+        <tr>
+            <td>path : string</td>
+             <td><div>a path/url to an image resource</div></td>
+            <td>""</td>
+        </tr>
+    </thead>
+</table>
+
+<pre>
+    <code>
+
+        //add "img1.jpg ..." as image paths
+
+        var images = [1,2,3,4,5].map(function(e){return "img"+ e +".jpg"}); 
+
+        //add slides with same way of defining paths/urls
+
+        var slides = [6,7,8,9,10].map(function(e){return
+        //creating Slide class objects
+            {
+                path:"img"+ e +".jpg",
+                text:"this is slide number "+e,
+                lifetime: 5
+            }
+        } ); 
+
+        //slide texts
+
+        var slideTexts = [1,2,3,4,5,6,7,8,9].map(function(e){return{
+        //create slide title class object
+        text:"this is text number "+e,
+        lifetime: e ,
+        style:"color:red,font-size:16px;margin-left:auto;margin-right:auto"
+        }) 
+
+        //backgrounds
+
+        var backgrounds = [1,2,3].map(function(e){return {path:"imgback"+ e +".jpg"}); 
+
+        //now let's create the whole thing
+
+        var slideshow = {
+            Images:images,
+            Slides:slides,
+            SlideTexts:slideTexts,
+            Animations:3,
+            Filters:3,
+            TextStyles:3,
+            TextAnimes:3,
+            Size:3,
+            Audio:"song.mp3",
+            Loop:true,
+            Controls:1,
+            backgroundbetween:true
+            CssClass:"myclass",
+            CallBack:{Function:"alert",Params:["slideshow is over!"]},
+            Poster:"myPoster.jpg",
+        };
+
+    </code>
+</pre>
+
+<h3><em>Class</em> SlideShowRemote</h3>
+
+<p>objects of this class are the most important of all, they are created by the <em>create()</em> method mentioned
+before, and contain both the SlideShow object, and also a rich API that allows you to control and update the slideshow.
+like a remote control.</p>
+
+<h4>methods</h4>
+
+<p><em>Start()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>Start()</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>starts the slideshow, from first slide on until it ends</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            none
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        var remote = EldritchSlideShow.Create({Images:images});
+                        remote.Start();
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>Stop()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>Stop()</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>stops the slideshow, resetting all progress and resuming to first slide</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            none
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        var remote = EldritchSlideShow.Create({Images:images}); 
+                        remote.Start(); 
+                        setTimeout(function(){remote.Stop();},10000);
+
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>Replay()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>Replay()</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>stops the slideshow, then immediately starting it again</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            none
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images}); 
+                        remote.Start(); 
+                        setTimeout(function(){remote.Replay();},10000);
+                </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>AddImages()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>AddImages(images : Array<string>)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>adds images to the slideshow. The additional images will appear next time the slideshow runs</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            an array of image urls/paths
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        var remote = EldritchSlideShow.Create({Images:images}); 
+                        remote.Start(); 
+                            setTimeout(function(){
+                            remote.AddImages(["additionalImage1.jpg","additionalImage2.jpg"]);
+                            remote.Replay();
+                        },10000);
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>AddSlides()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>AddSlides(slides : Array<Slide> )</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>adds slides to the slideshow. The additional slides will appear in the next run</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            an array of Slide class objects
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Slides:slides}); 
+                    remote.Start(); 
+
+                    setTimeout(function(){
+                        remote.AddSlides([
+                            {path:"additionalslide.jpg",text:"additinal slide 1"}, 
+                            {path:"additionalSlide1.jpg",text:"additionl slide 2"}
+                        ]); 
+                        remote.Replay();
+                    },10000);
+                </code>
+             </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>AddSlideTexts()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>AddSlideTexts(slideTexts:Array<SlideTitle>)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>adds more custom texts to the slideshow. The new texts will appear in the next run</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            an array of SlideTitle class objects
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        var remote = EldritchSlideShow.Create({Images:images}); 
+                        remote.Start(); 
+
+                        setTimeout(function(){
+                            remote.AddSlideTexts([
+                                                    {
+                                                        text:"Additional Text"
+                                                        ,style:"color:blue,font-size:16px;"+
+                                                        "margin-left:auto;margin-right:auto"
+                                                    },
+                                                    {
+                                                        text:"Additional Text2",
+                                                        style:"color:red,font-size:16px;"+
+                                                        "margin-left:auto;margin-right:auto"
+                                                    }
+                                                 ]); 
+                        remote.Replay();
+                        },10000);
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>AddBackGrounds()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>AddBackGrounds(BackGrounds:Array<BackGrounds>)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>adds additional backgrounds to the slideshow. The additional backgrounds will only appear in the next run</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            and array of background class objects
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        var remote = EldritchSlideShow.Create({Images:images,backgroundbetween:true}); 
+                        remote.Start(); 
+                        setTimeout(function(){
+                            remote.AddBackGrounds([
+                                                    {path:"additionalback1.jpg"}
+                                                    ,{path:"additionalback2.jpg"}
+                                                  ]); 
+                            remote.Replay(); 
+                        },10000);
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetAnimationLevel()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetAnimationLevel(level : number)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the animation level</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a number in range 0 - 3
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.SetAnimationLevel(3);remote.Replay();},10000);
+                </code>
+             </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetFilters()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetFilters(level : number)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the image filtering/twisting level</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a number in range 0 - 3
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                     var remote = EldritchSlideShow.Create({Images:images}); 
+                     remote.Start(); 
+                     setTimeout(function(){remote.SetFilters(3);remote.Replay();},10000);
+                </code>
+             </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetTextStyles()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetTextStyles(level : number)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the level of allowed text styles</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+             a number in range 0 - 3
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.SetTextStyles(3);remote.Replay();},10000);
+                </code>
+             </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>setTextAnimes()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>Start()</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the level of text animations allowed</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a number in range 0 - 2
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.setTextAnimes(2);remote.Replay();},10000);
+                </code>
+             </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetSize()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetSize(size : number)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets a new fixed size for the slideshow</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            size: a number in range 0 - 4
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.SetSize(3);},10000);
+                </code>
+             </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetAudio()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetAudio(path : string)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the audio for the slidshow</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a string for a path/url of an audio resource (mp3,wav,ogg)
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images,Audio:"song1.mp3"}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.Audio("song2.mp3");},10000);
+                </code>
+            </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetVolume()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetVolume(volume : number)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the volume of the slideshow's audio</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a number between 0 (mute) to 100 (full volume)
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images,Audio:"song1.mp3"}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.SetVolume(80);},10000);
+                </code>
+            </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetCallBack()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetCallBack()</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets the callback object, which comprises of a function name and an array of parameters</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            <ul>
+                an object that contains 2 keys: Function which is a function name, and Params which is an array of parameters
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        function foo(a,b,c){
+                        // do something with a,b and c...
+                        } 
+                        var remote = EldritchSlideShow.Create({Images:images}); 
+                        remote.Start(); 
+                        setTimeout(function(){remote.SetCallBack({
+                                Function:"foo",Params:[5,"boom"],20});
+                            },10000);
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetLoop()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetLoop(loop : boolean)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets whether the slideshow should play in a loop</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a boolean value
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+                    <code>
+                        var remote = EldritchSlideShow.Create({Images:images}); 
+                        remote.Start(); 
+                        setTimeout(function(){remote.SetLoop(true)},10000);
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetBackgroundsBetween()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetBackgroundsBetween(showBackgrounds: boolean)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>sets whether a background image shoule be seen between the slides</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a boolean value
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+            <pre>
+                <code>
+                    var remote = EldritchSlideShow.Create({Images:images,Animations:1}); 
+                    remote.Start(); 
+                    setTimeout(function(){remote.SetBackgroundbetween(true)},10000);
+                </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<p><em>SetCssClass()</em></p>
+
+<table>
+    <tr>
+        <td>Signature</td>
+        <td>SetCssClass(CssClass : string)</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>changes the slideshow container's css class</td>
+    </tr>
+    <tr>
+        <td>Return Value</td>
+        <td>this method returns the remote object itself, so method chaining is possible</td>
+    </tr>
+    <tr>
+        <td>Parameters</td>
+        <td>
+            a string representing a css class
+        </td>
+    </tr>
+    <tr>
+        <td>Example</td>
+        <td>
+            <div class="exampleRect">
+                <pre>
+
+                    HTML: 
+                    <code>
+
+                        &lt;style&gt; 
+                            .framed{
+                                border: 8px solid blue; 
+                            } 
+                        &lt;/style&gt; 
+                    </code>
+                    Js:
+                    <code>                            
+                        var sd = EldritchSlideShow.Create({Images:images}); 
+                        sd.Start(); 
+                        setTimeout(function(){sd.SetCssClass("framed")},10000);
+                    </code>
+                </pre>
+            </div>
+        </td>
+    </tr>
+</table></div><a href="https://github.com/oryaniv/Eldritch-Media-Slides"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a></div></body><script type="text/javascript" async="async" script-name="lusitana" src="http://use.edgefonts.net/lusitana.js"></script><script type="text/javascript" async="async" script-name="bad-script" src="http://use.edgefonts.net/bad-script.js"></script><script type="text/javascript" async="async" script-name="ubuntu" src="http://use.edgefonts.net/ubuntu.js"></script><script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();        </script>
