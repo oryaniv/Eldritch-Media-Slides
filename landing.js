@@ -1,4 +1,4 @@
-var bpath = "";
+var bpath = "images/";
 
 function startNext(sd){
     sd.Start();
@@ -13,10 +13,10 @@ var slides2 = [11,12,13,14].map(function(e){return {path:bpath+"img"+e+".jpg",li
 var slides3 = [0,1,2,4].map(function(e){return {path:bpath+"img"+e+".jpg",lifetime:2}});
 var slides4 = [16,17,18,19].map(function(e){return {path:bpath+"img"+e+".jpg",lifetime:2}});
 
-var sd1 = EldritchSlideShow.Create("#one",{Slides:slides1,Poster:"1.png",CssClass:"quarter",Animations:3});
-var sd2 = EldritchSlideShow.Create("#two",{Slides:slides2,Poster:"2.png",CssClass:"quarter",Animations:3});
-var sd3 = EldritchSlideShow.Create("#three",{Slides:slides3,Poster:"3.png",CssClass:"quarter",Animations:3});
-var sd4 = EldritchSlideShow.Create("#four",{Slides:slides4,Poster:"4.png",CssClass:"quarter",Animations:3});
+var sd1 = EldritchSlideShow.Create("#one",{Slides:slides1,Poster:bpath+"1.png",CssClass:"quarter",Animations:3});
+var sd2 = EldritchSlideShow.Create("#two",{Slides:slides2,Poster:bpath+"2.png",CssClass:"quarter",Animations:3});
+var sd3 = EldritchSlideShow.Create("#three",{Slides:slides3,Poster:bpath+"3.png",CssClass:"quarter",Animations:3});
+var sd4 = EldritchSlideShow.Create("#four",{Slides:slides4,Poster:bpath+"4.png",CssClass:"quarter",Animations:3});
 
 document.addEventListener("DOMContentLoaded",function(){
     
