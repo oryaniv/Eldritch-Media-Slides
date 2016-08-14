@@ -7,7 +7,7 @@
   transition: all 0.2s ease; }
 
 body {
-  background: url("mountsdouble.jpg") repeat-y;
+  background: url("images/mountsdouble.jpg") repeat-y;
   background-size: 100% auto; }
 
 body:after {
@@ -89,7 +89,7 @@ body:after {
     line-height: 1.4em; }
 
 .list-container {
-  background-image: url("wood-texture.jpg");
+  background-image: url("images/wood-texture.jpg");
   background-position: 50% 50%;
   border-radius: 2%;
   -webkit-filter: brightness(2); }
