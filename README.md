@@ -23,7 +23,7 @@ into his web page. with EMS you can create products starting from simple changin
 
 ## Official website
 
-There it Is : [oryaniv.github.io/Eldritch-Media-Slides](link to site)
+There it Is : (link to site)[oryaniv.github.io/Eldritch-Media-Slides]
 
 ## Usage
 
