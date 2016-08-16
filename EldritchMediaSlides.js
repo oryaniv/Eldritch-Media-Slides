@@ -1,7 +1,7 @@
 /// <reference path="typings/jquery/jquery.d.ts" />
 var EldritchSlideShow;
 (function (EldritchSlideShow) {
-    EldritchSlideShow.configOptions = { scriptPath: "https://rawgit.com/oryaniv/Slideshow-widget/master/production", stylePath: "https://rawgit.com/oryaniv/Slideshow-widget/master/production" };
+    EldritchSlideShow.configOptions = { scriptPath: "https://rawgit.com/oryaniv/Slideshow-widget/master/production/", stylePath: "https://rawgit.com/oryaniv/Slideshow-widget/master/production/" };
     EldritchSlideShow.Config = function (property, value) {
         if (!(property in EldritchSlideShow.configOptions)) {
             console.error("property " + property + " does not exist in Eldritch Slide Show configuration");
@@ -481,14 +481,14 @@ var EldritchSlideShow;
         // dynamic script
         var insertObj = CreateSlideScript(slideshow);
         // script bundle
-        var scriptBundle = "<script src='" + EldritchSlideShow.configOptions.scriptPath + "/EldritchMediaSlidesRun.min.js'></script>";
+        var scriptBundle = "<script src='" + EldritchSlideShow.configOptions.scriptPath + "EldritchMediaSlidesRun.min.js'></script>";
         // separate css 
         // var stylesheet = "<link rel='stylesheet' href='../Content/CSS/SlideShow.css'  />";
         //var animatecss = "<link rel='stylesheet' href='../Content/CSS/animate.css'/>";
         var fonts = (slideshow.Controls != 0 /* None */) ? "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>" : "";
         //var rangeSliderCss = "<link rel='stylesheet' href='../Content/CSS/rangeslider.css'/>";
         //css bundle
-        var styleBundle = "<link rel='stylesheet' href='" + EldritchSlideShow.configOptions.stylePath + "/EldritchMediaSlidesStyle.min.css'/>";
+        var styleBundle = "<link rel='stylesheet' href='" + EldritchSlideShow.configOptions.stylePath + "EldritchMediaSlidesStyle.min.css'/>";
         frame.contentWindow.document.open('text/html', 'replace');
         frame.contentWindow.document.write(styleBundle + fonts + content + scriptBundle + insertObj);
         frame.contentWindow.document.close();
