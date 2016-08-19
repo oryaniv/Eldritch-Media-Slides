@@ -1,7 +1,7 @@
 /// <reference path="typings/jquery/jquery.d.ts" />
 var EldritchSlideShow;
 (function (EldritchSlideShow) {
-    EldritchSlideShow.configOptions = { scriptPath: "https://rawgit.com/oryaniv/Slideshow-widget/master/production/", stylePath: "https://rawgit.com/oryaniv/Slideshow-widget/master/production/" };
+    EldritchSlideShow.configOptions = { scriptPath: "https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/production/", stylePath: "https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/production/" };
     EldritchSlideShow.Config = function (property, value) {
         if (!(property in EldritchSlideShow.configOptions)) {
             console.error("property " + property + " does not exist in Eldritch Slide Show configuration");
