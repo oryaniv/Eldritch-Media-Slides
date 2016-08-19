@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded",function(){
     for(var i = 1; i<4;i++){
         (function(idx){
             setTimeout(function(){
-                slideShows[idx].AddSlides(imageNumbersArray[idx]
+                slideShows[idx].AddSlides(imageNumbersArray[idx - 1]
                             .map(function(e){return {path:bpath+"img"+e+".jpg",lifetime:2}}));
             },4000* idx);
         })(i);
