@@ -1,0 +1,2065 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Eldritch Media Slides</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+        
+        body{
+            direction:rtl;
+            font-family:Arial, Helvetica,"Alef Hebrew", sans-serif;
+            background-color:#4d4848;
+            color:#ffffff;
+            margin-right:5%;
+            margin-left:5%;
+        }
+
+        
+       /*.footer {
+             page-break-after: always;
+             page-break-before: always;
+        }*/
+       
+
+        .center{
+            text-align:center;
+        }
+
+        .underline{
+            text-decoration:underline;
+        }
+
+        .bold{
+           font-weight:bold;
+        }
+
+        .smallbrk{
+            height:10px;
+        }
+
+        .exampleRect{
+            min-height:50px;
+            background:#232020;
+            color:#CAC5BF;
+            padding-left:5px;
+            direction:ltr !important;
+            text-align:left;
+            padding: 3% 3% 3% 3%;
+            margin-top:2%;
+            margin-bottom:2%;
+        }
+
+        code{
+            direction:ltr !important;
+            text-align:left;
+            font-size:16px;
+        }
+
+        #water-mark{
+            display: inline-block;
+          -webkit-box-sizing: content-box;
+          -moz-box-sizing: content-box;
+          box-sizing: content-box;
+          border: none;
+          font: normal 70px/1 "Aladin", Helvetica, sans-serif;
+          color: rgba(48,48,48,1);
+          text-align: center;
+          text-transform: normal;
+          -o-text-overflow: clip;
+          text-overflow: clip;
+          white-space: pre;
+          text-shadow: 1px 1px 0 rgba(140,140,140,0.6) , -1px -1px 1px rgba(0,0,0,0.67) ;
+          position:fixed;
+          top:30%;
+          left:30%;
+          -webkit-transform: rotateZ(35deg)   ;
+          transform: rotateZ(35deg)   ;
+          z-index:-2;
+        }
+
+        .left{
+            text-align:left;
+            direction:ltr;
+        }
+
+        .rtl{
+            direction:rtl;
+        }
+
+        ol li{
+            margin-top:2%;
+            margin-bottom:2%;
+        }
+
+        img{
+            margin-top:3%;
+            margin-bottom:2%;
+        }
+
+        table{
+            min-height:50px;
+            padding-left:5px;
+            direction:ltr !important;
+            text-align:left;
+            padding: 3% 3% 3% 3%;
+            margin-top:2%;
+            margin-bottom:2%;
+            border-collapse:collapse;
+            margin-left:auto;
+            margin-right:auto;
+            width:100%;
+        }
+
+        table ,td{
+            border:3px solid rgba(140,140,140,0.6);
+        }
+
+        th{
+            border:5px solid rgba(140,140,140,1);
+        }
+
+        td,th{
+            padding-left:10px;
+            height: 50px;
+        }
+
+        .comment{
+            display:block;
+            color:green;
+        }
+
+        .comment::before{
+            content:"// ";
+        }
+
+        .padLeft{
+            padding-left:25px;
+        }
+
+        .block{
+            display:block;
+        }
+
+        .resWord{
+            color:#2d68f3;
+            font-style:italic;
+        }
+
+        .stringlit{
+            color:#9c5f09;
+        }
+
+        .htmlTag{
+            color:#7338D4;
+        }
+
+        .className{
+            color:#b47a34;      
+            font-weight:bold;    
+        }
+        
+        .attribute{
+            color:#2d68a1;
+                      
+        }
+        
+        .padSmall{
+            padding-left:15px;
+        }
+        
+        .padMed{
+            padding-left:30px;
+        }
+        
+        .padLg{
+            padding-left:55px;
+        }
+        
+        .padGrt{
+            padding-left:105px;
+        }
+        
+        .padGrtr{
+            padding-left:115px;
+        }
+        
+        .padGrtst{
+            padding-left:135px;
+        }
+        
+        a{
+            color:blue;
+        }
+        
+        
+    </style>
+        <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/oryaniv/Eldritch-Media-Slides/master/TestImages/hl.css">
+        <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">-->
+</head>
+<body>
+    
+    <h6>בס"ד</h6>
+    <h1 class="center">Eldritch Media Slides</h1>
+    <h2 class="center">מנוע לייצור מצגות</h2>
+    <h3 class="center">אור יניב</h3>
+    <h4 class="center">קוד מקור ב: <a href="https://github.com/oryaniv/Eldritch-Media-Slides">https://github.com/oryaniv/Eldritch-Media-Slides</a></h4>
+    <div class="underline bold">הקדמה</div>
+    <div class="smallbrk"></div>
+    <div>שלום לכם, אנשים חביבים, טובי לב ויצירתיים שכמותכם!</div>
+    <p>
+        האם כבר קרה לכם בעבר שרציתם ליצור איזה אלבום תמונות מושקע? אולי מצגת נחמדה בשביל חבר או קרוב, לאיזה אירוע או צורך אחר וכל מה שעצר אתכם היה...
+    </p>
+    <ul>
+        <li>חוסר מיומנות?</li>
+        <li>אין לכם זמן לזה?</li>
+        <li>אין לכם כוח לזה?</li>
+        <li>חוששים שזה לא ייצא טוב?</li>
+    </ul>
+    <p>
+        ואולי, אתם מפתחים שרצו לבנות אתר, והייתם רוצים לתת לו תנופה בצורת מצגת שתראה את התוצרים או הרעיונות שלכם? או פשוט רציתם במקום לשים תמונה, לשים רצף שלם שגם יודע להתחלף באנימציה מגניבה, ולא ידעתם שזה הרבה יותר פשוט משחשבתם?
+    </p>
+    <div>ובכן, ידידיי, תהיותיכם הגיעו אל קיצן...</div>
+    <div>הכלי שלפניכם הינו לא פחות(ואולי קצת יותר אפילו) - מנוע הכתוב בשפת התכנות JavaScript, המאפשר לכם בקלות יחסית להפוך אוסף תמונות שלכם למצגת חיה ומתפקדת.</div>
+    <div>במדריך שלפניכם השתדלתי להכניס כמה שיותר הסברים פשוטים ומפורטים לגבי צורת השימוש הקלה והבטוחה, והסברים מפורטים לגבי כל אחת מהאפשרויות הניצבות בפניכם לעיצוב המצגת.</div>
+    <div>מקווה מאוד שתהנו, תתרשמו, וכמובן - תספרו גם לחבריכם</div>
+    <div >אור יניב</div>
+    <div class="footer"></div>
+    <h2>התחלה מהירה - לא מתכנתים</h2>
+    <div>ראשית כל, אומר שאין צורך להיבהל מהכותרת. כל הכתוב להלן נכון לכל מי שמתכוון להשתמש בכלי זה (ואני אכן מקווה שאתם ביניהם)</div>
+    <div>מאוחר יותר במסמך זה יהיה גם תיעוד המתאים לאנשי תוכנה, ובפרט מתכנתי Web, עבורם כל המושגים כאן בוודאי יהיו מוכרים ואולי אפילו טריוויאליים.</div>
+    <div>עד נקודה זו וודאי שאלתם את עצמכם - מה בכלל כל כך מיוחד בכלי הזה, שאין לי בכל דרך אחרת שאני מכיר כדי ליצור מצגות - אפליקציות בסמאטרפון, Power Point וכו' וכו'?</div>
+    <div>התשובה שלי לשאלה זו ישירה - מהירות , קלות, אפשרויות , תאימות</div>
+    <div>בעוד רגע תראו כיצד עם כתיבה מינימלית ניתן ליצור מצגת, עם הרבה מאוד אפשרויות עריכה שלא תמיד קיימות בכלים שאתם מכירים, ועם הרבה מאוד אפשרויות להרחיב הלאה וליצור דברים מרשימים</div>
+    <div class="smallbrk"></div>
+    <div class="underline bold">התקנה</div>
+    <div>אה- הא! נלחצנו עכשיו, נכון?</div>
+    <div>ומה אם אומר לכם שזה עוד יותר קל משיכולתם לדמיין?</div>
+    <div>ובכן, הבה נתחיל. עקבו אחרי סדרת הצעדים הבאה, המלווה בהסברים:</div>
+    <ol>
+        <li>
+            <div>פתחו קובץ טקסט חדש וריק - בין אם זה על ידי notepad או כל עורך טקסט אחר שאתם מכירים.</div>
+        </li>
+        <li><div>שנו את הסיומת של הקובץ מtxt לhtml. צעד זה חשוב כדי שהתוצר ירוץ בדפדפן</div></li>
+        <li>
+            <div>עכשיו נפתח את קובץ הטקסט, ונכתוב לתוכו את מה שמובא בדוגמא להלן:</div>
+            <div class="exampleRect">
+                <code>
+                    &lt;body&gt;
+                    <br />
+                    &lt;script src="https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.js"&gt;&lt;/script&gt;
+                    <br />
+                    &lt;script&gt;
+                    <br />
+                    &lt;/script&gt;
+                    <br />
+                    &lt;/body&gt;
+                </code>
+            </div>
+
+            <div>מבולבלים? זה בסדר, הנה הסבר למה שעשינו זה עתה:</div>
+            <div>
+                הקובץ שזה עתה פתחנו, קובץ הhtml, הוא קובץ מסוג שכל הדפדפנים החל בגוגל כרום וכלה באקספלורר, יודעים להריץ ולתרגם את הכתוב בו לתוכן ויזואלי.
+                תכונה מעניינת נוספת של קבצים כאלו, היא שהם יכולים להכיל קוד שמסוגל להתבצע בתוך הדפדפן שלנו. כאן מתחיל הקסם.
+            </div>
+            <div>
+                השורה הראשונה בדוגמא היא בסך הכול עטיפה ואינה צריכה לעניין אתכם. השורה השנייה היא בקשה לשרת שרץ על ענן באינטרנט, שישלח לנו את הקובץ שם נמצאת התוכנה שיודעת לייצר את המצגות.
+            </div>
+            <div class="smallbrk"></div>
+            <div>
+                עכשיו, בין שתי תגיות הscript  שכתבנו לאחר מכן, נכתוב את השורות שייצרו עבורנו את המצגת.
+            </div>
+        </li>
+        <li>
+            <div> ובכן, ראשית כל, אין מצגת ללא תמונות, ולכן עכשיו זה הזמן לייבא את התמונות עבור המצגת שלנו:</div>
+            <div> פתחו תיקייה חדשה, והכניסו לתוכה את הקובץ שיצרנו זה עתה. לאחר מכן, שימו באותה תיקייה את כל התמונות בהן תרצו להשתמש. להמחשה:</div>
+            <img src="https://cdn.gitcdn.link/cdn/oryaniv/Eldritch-Media-Slides/fcaf57f44073b664ea4447f45c6df1979bc72801/TestImages/folder.PNG" height="250" width="850" />
+            <div> וזהו זה! כרגע שמנו את כל התמונות באותה תיקייה, אם כי לצורך העניין, ניתן לשים אותן גם במקומות אחרים (ואפילו במקומות שונים ברשת) ולגשת אליהם בכל מקרה. אבל זה כבר סיפור מתקדם יותר.</div>
+        </li>
+        <li>
+            <div>ועכשיו, אחרי כל ההתעסקות הזו... אנו מגיעים לחלק הכיף באמת:</div>
+            <div>פתחו את קובץ ה html, וערכו אותו כך:</div>
+            <div class="exampleRect">
+                <code>
+                    &lt;body&gt;
+                    <br />
+                    &lt;script src="https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.js"&gt;&lt;/script&gt;
+                    <br />
+                    &lt;script&gt;
+                    <br />
+                    <br />
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"]}).Start();
+                    <br />
+                    <br />
+                    &lt;/script&gt;
+                    <br />
+                    &lt;/body&gt;
+                </code>
+            </div>
+            <div>וזה כמובן השלב בו אתם צועקים עליי: "וואה וואה רגע אחד! מה לכל השדים אמרת לנו לכתוב כאן? זה איזה שיר הלל לשטן או משהו?"</div>
+            <div>אז לא, לא בדיוק, רק כמעט. בואו נראה מה באמת עשינו כאן:</div>
+            <div> ובכן, את מה שכבר כתבנו אני מניח שאתם מכירים, אז אין צורך להכביר מילים. אולם, ניתן לראות שהוספנו כמה דברים בין שתי תגיות הסקריפט.</div>
+            <div>הדבר הראשון שנעשה כאן הוא פנייה למנוע עצמו, ה EldritchSlideShow, ושימוש בפעולה שנקראת Create. זוהי הפעולה הראשונית שכל תפקידה הוא לייצר עבורכם את המצגת</div>
+            <div>ואולם, הפעולה הזו אינה יודעת להתבצע אם לא מספקים לה כמה נתונים. הנתון Images, משמעו התמונות בהן נרצה להשתמש כדי לייצר את המצגת. תוכלו לראות שבתוך הסוגריים יצרנו רצף הכולל את שמות כל התמונות ששמנו בתיקייה לעיל.</div>
+            <div>לבסוף, אנו קוראים לפעולה Start, שתפקידה לגרום למצגת לרוץ. נסו זאת עכשיו, וראו את הפלא קורה לנגד עיניכם!</div>
+
+            <div class="bold">שימו לב!</div>
+            <div> עליכם לוודא שאתם עוקבים בדיוק אחרי הפורמט שבדוגמא: סוגריים עגולים, בתוכם סוגריים מסולסלים, ההפרדה בסוגריים, ואת שמות התמונות בתוך גרשיים, ולא לשכוח את הסיומת. אלו גם חייבים להיות שמות הקבצים ששמתם בתיקייה. אי מילוי אחד מהפרטים האלו יכול לגרום שהכול פשוט לא יעבוד ולא תראו דבר.</div>
+        </li>
+    </ol>
+        <div class="bold underline">בעיות?</div>
+        <div>ישנן כמה וכמה סיבות אפשריות שמשהו ישתבש. אם אינכם רואים את התוצאה, נסו לבדוק את הדברים הבאים:</div>
+    <ol>
+        <li>האינטרנט מחובר ועובד</li>
+        <li>הקובץ שלכם הוא באמת בעל הסיומת html</li>
+        <li>התמונות נמצאות באותה תיקייה</li>
+        <li>לא שכחתם לכלול את התוכנה עצמה (הסקריפט הראשון) או את ה body</li>
+        <li>כתבתם את הפקודות כפי שהן במצגת, בלי לפספס עם אות קטנה/גדולה</li>
+        <li>הסוגריים, שמות התמונות בין גרשיים, זהים לשמות קבצי התמונות בתיקייה שלכם</li>
+    </ol>
+    <div class="footer"></div>
+    <h2>משעמם!!</h2>
+    <div>כן, אוקיי, שמעתי אתכם. נכון, כל מה שיש לכם כרגע זה תמונות שזזות מאחת לשנייה בצורה הכי משעממת שיש, לא לדבר על זה שזה קטן ובצד..</div>
+    <div>אבל היי, לא באמת חשבתם שכאן זה נגמר, נכון? רק התחלנו לגרד את העטיפה!</div>
+    <div>ננסה דוגמא יותר מורכבת עכשיו. כמובן שיהיו עוד כמה דברים לכתוב ולהסביר, אבל לפחות עכשיו אין צורך בכל ההכנות האחרות!</div>
+    <div>פתחו שוב את הקובץ, ועכשיו שנו את הטקסט בצורה הבאה:</div>
+    <div class="exampleRect">
+        <code>
+            &lt;body&gt;
+            <br />
+            &lt;script src="https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.js"&gt;&lt;/script&gt;
+            <br />
+            &lt;script&gt;
+            <br />
+            <br />
+            EldritchSlideShow.Create({<br/>Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],<br />Size:4,<br />Animations:3,<br />Filters:2,<br />Controls:1<br />}).Start();
+            <br />
+            <br />
+            &lt;/script&gt;
+            <br />
+            &lt;/body&gt;
+        </code>
+    </div>
+    <div>נו, איך עכשיו? הרבה יותר מגניב נכון?</div>
+    <div>וזה בדיוק הרעיון, בעזרת קצת הגדרות נוספות, תוכלו להפוך את המצגת שלכם למורכבת ומעניינת הרבה יותר, וזה אפילו לא לוקח הרבה מאמץ!</div>
+    <div>ועכשיו, כפי שבוודאי תיארתם לעצמכם, הגיע החלק הקצת דורשני אך בהחלט שווה את זה זה- פירוט האפשרויות העומדות בפניכם בעת הכנת מצגת:</div>
+    <ol>
+        <li>
+            <div class="bold">Images - תמונות</div>
+            <div>אלו התמונות שיוצגו במצגת. מכניסים אותן כרצף של שמות</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא:</div>
+            <div class="exampleRect">
+                <code>                   
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"]}).Start();                   
+                </code>
+            </div>
+            <div>דומה למה שכבר ראינו</div>
+            <div>אם לא קובעים את האפשרות הזו: אין תמונות</div>
+        </li>
+        <li>
+            <div class="bold">Slides - שקופיות</div>
+            <div>בעזרת אלו אפשר להגדיר שקופיות מורכבות יותר. כולל הגדרת זמן, וטקסט שמתלווה אליה</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Slides:[<br />{path:"img1.jpg",text:"זוהי מצגת מספר 1",liftime:2},<br />
+                    {path:"img2.jpg",text:"זוהי מצגת מספר 2",liftime:3},<br />
+                    {path:"img3.jpg",text:"זוהי מצגת מספר 3",liftime:4},<br />
+                    {path:"img4.jpg",text:"זוהי מצגת מספר 4",liftime:5},<br />
+                    {path:"img5.jpg",text:"זוהי מצגת מספר 5",liftime:6}]<br />}).Start();
+                </code>
+            </div>
+            <div>שימו לב שהפעם לא סתם כותבים את שם התמונה, אלא גם אפשר (לא חובה) להוסיף טקסט וכמה זמן רוצים שהתמונה תוצג. לוקח קצת זמן להתרגל לצורת הכתיבה כאן, אבל זה שווה את זה!</div>
+            <div>אם לא קובעים את האפשרות הזו: אין שקופיות</div>
+        </li>
+        <li>
+            <div class="bold">Size - גודל</div>
+            <div>בחירה באחד מ5 גדלים קיימים</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],Size:3}).Start();
+                </code>
+            </div>
+            <div>הגדלים הקיימים הם - 0: גודל לא מוגדר 1:קטן 2: בינוני 3: גדול 4: מסך מלא</div>
+            <div>אם לא קובעים את האפשרות הזו: הגודל הוא 1</div>
+        </li>
+        <li>
+            <div class="bold">Animation - אנימציות</div>
+            <div>קובע את רמת האנימציות בהן תשתמש המצגת. מ 0 -ללא אנימציות ועד 3 - כולל כל האנימציות האקסטרוונגטיות ביותר</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],Animations:2}).Start();
+                </code>
+            </div>
+            <div>אפשרויות קיימות: 0 - ללא 1 - אנימציות פשוטות בלבד 2 - אנימציות מתקדמות 3 - כל הארסנל!</div>
+            <div>אם לא קובעים את האפשרות הזו: רמת אנימציות 0</div>
+        </li>
+        <li>
+            <div class="bold">Filters - פילטרים</div>
+            <div>קצת לפני שתמונה תיעלם מהמסך, היא תעבור פילטור צבעוני יפה ונחמד. ברמות הגבוהות, זה יכול להתבטא באנימציה נוספת, לכן השם מעט מטעה</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],Filters:2}).Start();
+                </code>
+            </div>
+            <div>0 - ללא 1 - פילטרים פשוטים 2 -כל הפילטרים 3- כולל אנימציות</div>
+            <div>אם לא קובעים את האפשרות הזו: רמת פילטרים 0</div>
+        </li>
+        <li>
+            <div class="bold">TextStyles - סגנון טקסטים</div>
+            <div>מאפשר לקבוע את סגנונות הטקסט האפשריים עבור הטקסטים של השקופיות</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({<br />Slides:[<br />{path:"img1.jpg",text:"זוהי מצגת מספר 1",liftime:2},<br />
+                    {path:"img2.jpg",text:"זוהי מצגת מספר 2",liftime:3},<br />
+                    {path:"img3.jpg",text:"זוהי מצגת מספר 3",liftime:4},<br />
+                    {path:"img4.jpg",text:"זוהי מצגת מספר 4",liftime:5},<br />
+                    {path:"img5.jpg",text:"זוהי מצגת מספר 5",liftime:6}<br />],<br />TextStyles:3<br />}).Start();
+                </code>
+            </div>
+            <div>0 - סגנונות בסיסיים 1 - צבעוני 2 - מתקדם 3 - רבגוני</div>
+            <div>אם לא קובעים את האפשרות הזו: 0</div>
+        </li>
+        <li>
+            <div class="bold">TextAnimes - אנימציות טקסטים</div>
+            <div>קובע האם ואיזה אנימציות יופעלו על הטקסטים המצורפים למצגות</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({<br />Slides:[<br />{path:"img1.jpg",text:"זוהי מצגת מספר 1",liftime:2},<br />
+                    {path:"img2.jpg",text:"זוהי מצגת מספר 2",liftime:3},<br />
+                    {path:"img3.jpg",text:"זוהי מצגת מספר 3",liftime:4},<br />
+                    {path:"img4.jpg",text:"זוהי מצגת מספר 4",liftime:5},<br />
+                    {path:"img5.jpg",text:"זוהי מצגת מספר 5",liftime:6}<br />],<br />TextStyles:1,<br />TextAnimes:3<br />}).Start();
+                </code>
+            </div>
+            <div>0 - ללא 1- אנימציות בסיסיות 2 - כל האנימציות</div>
+            <div>אם לא קובעים את האפשרות הזו: 0</div>
+        </li>
+        <li>
+            <div class="bold">SlideTexts  - טקסטים חופשיים במצגת</div>
+            <div>מאפשר לקבוע טקסטים שיופיעו תוך כדי המצגת ללא קשר לתמונה או שקופית מסויימת. טקסטים אלו מושפעים מסגנונות טקסטים בדיוק כמו אלו הקשורים לשקופיות</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({
+                    Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],<br />
+                    SlideTexts:[<br />{text:"זהו הטקסט הראשון",lifetime:5},<br />{text:"זהו הטקסט השני",lifetime:5},<br />{text:"זהו הטקסט השלישי",lifetime:5},<br />{text:"זהו הטקסט הרביעי",lifetime:5}<br />]
+                    }).Start();
+                </code>
+            </div>
+            <div>עבור כל אחד מהטקסטים ניתן לקבוע: text - הטקסט שיוצג, lifetime - הזמן שהטקסט יוצג על המסך, style - סגנון css, נועד למפתחים</div>
+            <div>אם לא קובעים את האפשרות הזו: אין טקסטים חופשיים</div>
+        </li>
+        <li>
+            <div class="bold">Controls - כפתורי שליטה במצגת</div>
+            <div>מאפשר צירוף של פאנל שליטה במצגת - כפתורי Play, Stop, Replay ואף מד ווליום</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"], Controls:2}).Start();
+                </code>
+            </div>
+            <div> 0 - ללא כפתורים 1 - פאנל שמופיע בעת שהעכבר על המצגת, ויורד כשמזיזים אותו 2 - הכפתורים תמיד מופיעים</div>
+            <div>אם לא קובעים את האפשרות הזו: 0</div>
+        </li>
+        <li>
+            <div class="bold">Backgrounds  - רקעים</div>
+            <div>מאפשר לקבוע תמונות שיופיעו בין שקופית לשקופית במצגת, כתמונות רקע</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({<br />Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],<br />Backgrounds:[{path:"background1.jpg"},{path:"background2.jpg"}],<br />backgroundbetween:true,Animations:1})<br />.Start();
+                </code>
+            </div>
+            <div>אין טעם לקבוע את האפשרות הזו אם backgroundbetween אינו מצויין</div>
+            <div>אם לא קובעים את האפשרות הזו: במידה ובכל זאת נקבע שיהיו מרווחים, יופיע מסך שחור</div>
+            <div class="smallbrk"></div>
+            <div>הערה: שימו לב שאתם מוסיפים את שתי התמונות background לתיקייה, כמו את התמונות הרגילות.</div>
+            <div>הערה 2: כרגע, האופציה לרקעים לא תעבוד במצגות בהן המעבר בין תמונות הוא מיידי. לכן תיאלצו לאפשר אנימציות לשם כך.</div>
+        </li>
+        <li>
+            <div class="bold">backgroundbetween  - מרווחים בין תמונות</div>
+            <div>קובע האם יהיה מרווח קצר בין 2 תמונות או שהן יופיעו בזו אחר זו</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({<br />Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],<br/>backgroundbetween:true}<br />).Start();
+                </code>
+            </div>
+            <div>זהו ערך שמקבל רק אמת או שקר.</div>
+            <div>אם לא קובעים את האפשרות הזו: אין מרווחים</div>
+        </li>
+        <li>
+            <div class="bold">Audio  - צליל</div>
+            <div>מאפשר לצרף רצועת השמעה למצגת</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({<br />Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],<br />Audio:"some_sound.mp3"<br />}).Start();
+                </code>
+            </div>
+            <div>אפשר להזין קבצי mp3, wav, ogg. במידה והוזן צליל ויש גם את פאנל הכפתורים, יופיע גם מד ווליום</div>
+            <div>אם לא קובעים את האפשרות הזו: אין צליל</div>
+
+        </li>
+        <li>
+            <div class="bold">Loop - הפעלה בלולאה</div>
+            <div>מאפשר לקבוע האם המצגת תרוץ שוב מההתחלה בכל פעם שהיא מסתיימת</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],Loop:true}).Start();
+                </code>
+            </div>
+            <div>גם אפשרות זו מקבלת רק אמת או שקר</div>
+            <div>אם לא קובעים את האפשרות הזו: ללא לולאה</div>
+        </li>
+        <li>
+            <div class="bold">Poster - תמונת פוסטר</div>
+            <div>מאפשר להצמיד תמונה שתופיע בחזית המצגת בכל זמן שהיא אינה רצה, כמו סוג של מסך ראשי</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({<br />Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],<br />Poster:"poster.jpg"<br />}).Start();
+                </code>
+            </div>
+            <div>אם לא קובעים את האפשרות הזו: אין פוסטר</div>
+        </li>
+        <li>
+            <div class="bold">CssClass - סגנון CSS</div>
+            <div>מאפשר למפתחים לקבוע סגנון נוסף לאובייקט המצגת - נועד בעיקר למפתחי CSS</div>
+            <div class="smallbrk"></div>
+            <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],CssClass:"framed"}).Start();
+                </code>
+            </div>
+            <div>אם לא קובעים את האפשרות הזו: כלום</div>
+        </li>
+        <li>
+            <div class="bold">CallBack - פונקציה חוזרת</div>
+            <div>נועד למפתחים, מאפשר לקבוע איזו פונקציה תיקרא בסוף המצגת</div>
+            <div class="smallbrk"></div>
+             <div class="bold underline">דוגמא :</div>
+            <div class="exampleRect">
+                <code>
+                    EldritchSlideShow.Create({Images:["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"],CallBack:{Function:"foo",Params:[5,"hello"]}}).Start();
+                </code>
+            </div>
+            <div>הפרמטר הראשון מקבל שם של פונקציה, השני מקבל מערך המכיל את הפרמטרים הרצויים</div>
+            <div>אם לא קובעים את האפשרות הזו: כלום</div>
+        </li>
+    </ol>
+
+    <div>אלו כל האפשרויות הרלוונטיות. בעתיד אני מתכנן להוסיף אפשרויות נוספות, ואף עורך שיאפשר גישה נוחה יותר ליצירה.</div>
+    <div>בינתיים, מקווה שתמצאו את הכלי הזה נוח ומהנה. אני ממליץ לכם לנסות את כל הדוגמאות שפורטו מעלה, ואז להתקדם הלאה. קדימה, לעבודה!</div>
+   
+    <h2> מדריך מפורט - מתכנתים </h2>
+    <div>
+        כל מה שייאמר להלן מניח שאתם אנשי תוכנה, יש לכם הבנה בקוד, זרימה של תוכנית, ועם קצת מזל - גם בנבכי שפות הרשת - Html, Css ו JavaScript. 
+         הידע הזה יאפשר לכם להפיק את המירב מהמכלול העצום של האפשרויות שהכלי הזה נותן לכם
+    </div>
+    <div class="smallbrk"></div>
+    <div class="bold underline">הממשק - API</div>
+    <div class="smallbrk"></div>
+    <div>אם קראתם עד כה, ראיתם בוודאי את הצורה בה מייבאים (Import)
+                את המודול לתוך הסקריפט שלכם. המודול נקרא EldritchSlideShow והוא מחזיק עליו כמה אפשרויות ליצירה וקנפוג של מערכת המצגות.
+                אנחנו נעבור עכשיו באופן מפורט על כל המתודות והמאפיינים של האובייקטים הקיימים במודול, ובסופו של דבר ניצור 2 דוגמאות מורכבות שידגימו את כוחו של הכלי.
+    </div>
+    <div class="bold">אז קדימה, לדרך!</div>
+    <div class="smallbrk"></div>
+    <div class="bold underline">Module EldritchSlideShow</div>
+    <div class="smallbrk"></div>
+    <div class="underline">מתודות - methods :</div>
+    <div class="smallbrk"></div>
+    <div class="bold left">Create()</div>
+        <table>
+            <tr>
+                <td>Signature - חתימה</td>
+                <td>Create(queryString : string, sd : SlideShow)</td>
+            </tr>
+            <tr>
+                <td>Description - תיאור</td>
+                <td>מייצרת מצגת חדשה על הדף, המורכבת מכל הפרמטרים שנשלחו, ומחזירה אובייקט המאפשר לשלוט במצגת</td>
+            </tr>
+            <tr>
+                <td>Return Value - ערך החזרה</td>
+                <td>SlideShowRemote</td>
+            </tr>
+            <tr>
+                <td>Parameters - פרמטרים</td>
+                <td>
+                    <ul>
+                        <li>queryString(optional) :  מחרוזת המבטאת את האלמנט עליו נרצה ליצור את המצגת. אם פרמטר זה אינו נשלח, המצגת תיווצר במקום הפנוי הבא בדף.</li>
+                        <li>SlideShow : אובייקט מסוג מצגת, המכיל את כל המאפיינים הרצויים</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Example - דוגמא</td>
+                <td>
+                    <div class="exampleRect">
+                        <code>
+                            HTML:
+                            <br />
+                            <br />
+                            &lt;div <span class="attribute">id</span>=<span class="stringlit">"container"</span> &gt;&lt;/div&gt;
+                            <br />
+                            <br />
+                            JS:
+                            <br />
+                            EldritchSlideShow.Create(<span class="stringlit">"#container"</span>,{<br /><span class="padMed">Images:[<span class="stringlit">"img1.jpg"</span>,<span class="stringlit">"img2.jpg"</span>,<span class="stringlit">"img3.jpg"</span>,<span class="stringlit">"img4.jpg"</span>,<span class="stringlit">"img5.jpg"</span></span>],<br /><span class="padMed">Size:4</span>,<br /><span class="padMed">Animations:3</span>,<br /><span class="padMed">Filters:2</span>,<br /><span class="padMed">Controls:1</span><br />})
+                        </code>
+                        
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div>הערה: כפי שניתן לראות, הפרמטר querystring הוא מחרוזת הדומה לselector של CSS או Jquery. מומלץ לקרוא רפרנסים בסיסיים של שפות אלו אם ברצונכם להשתמש ביכולת הזו</div>
+        <div>במידה והפרמטר הראשון לא יישלח, תיווצר המצגת במקום הפנוי הראשון בדף.</div>
+    <div class="smallbrk"></div>
+    <div class="bold left">Config()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>Config(property:string,value:string)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>מתודה זו נועדה על מנת לשלוט בערכי ברירת המחדל של המערכת.</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>אין</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li><div class="rtl">
+                        property - נכון לעכשיו יש שני ערכי קונפיגורציה בהם ניתן לשלוט. stylePath שהוא המקום ממנו לוקחת המערכת את קבצי הסטייל, ו scriptPath שהוא המקום ממנו לוקחת המערכת את קבצי ה JS
+                        . השתמשו באפשרויות אלו כאשר אתם רוצים להוריד את כל הקבצים לשרת משלכם, ולהגיש אותם ממנו, במקום דרך השרת הרגיל
+                        </div>
+                    </li>
+                    <li>
+                        <div class="rtl">value - הערך החדש</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>                       
+                        EldritchSlideShow.Config(<span class="stringlit">"stylePath"</span>,<span class="stringlit">"www.myServer.com"</span>);
+                        <br/>
+                        EldritchSlideShow.Config(<span class="stringlit">"scriptPath"</span>,<span class="stringlit">"www.myServer.com"</span>);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div>מתודה זו נועדה למקרה בו תרצו להביא את הקבצים של Eldritch Media Slides ממקום שהוא לא הCDN הרגיל, למשל השרת שלכם.</div>
+    <div class="smallbrk"></div>
+    <div class="smallbrk"></div>
+    <div class="smallbrk"></div>
+    <div class="underline center">מחלקות - Classes</div>
+    <div class="smallbrk"></div>
+    <div class="bold underline">Class SlideShow</div>
+    <div class="smallbrk"></div>
+    <div>מחלקה זו מייצגת את המצגת כולה. היא כוללת בתוכה את התמונות, הטקסטים, וכל המאפיינים היוצרים את המצגת</div>
+    <div class="smallbrk"></div>
+    <div class="underline">מתודות - methods :</div>
+    <div class="bold">אין</div>
+    <div class="smallbrk"></div>
+    <div class="underline">שדות - members :</div>
+    <table>
+        <thead>
+            <tr>
+                <th>name : type - שם : טיפוס</th>
+                <th>description - תיאור</th>
+                <th>default value - ערך ברירת מחדל</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Images: Array&lt;string&gt;</td>
+            <td><div class="rtl">מערך מחרוזות המתארות path/url של תמונות</div></td>
+            <td>empty array ( [] )</td>
+        </tr>
+        <tr>
+            <td>Slides: Array&lt;Slide&gt;</td>
+            <td><div class="rtl">מערך אובייקטים ממחלקת Slide</div></td>
+            <td>empty array ( [] )</td>
+        </tr>
+        <tr>
+            <td>SlideTexts : Array&lt;SlideTitles&gt;</td>
+            <td><div class="rtl">מערך אובייקטים ממחלקת SlideTitles</div></td>
+            <td>empty array ( [] )</td>
+        </tr>
+        <tr>
+            <td>Backgrounds : Array&lt;BackGround&gt;</td>
+            <td><div class="rtl">מערך אובייקטים ממחלקת Background</div></td>
+            <td>empty array ( [] )</td>
+        </tr>
+        <tr>
+            <td>Animations: number</td>
+            <td>
+                מספר בין 0 - 3 המתאר את רמת האנימציות המותרת במצגת
+                <ul>
+                    <li>0 : None</li>
+                    <li>1 : basic</li>
+                    <li>2 : standard</li>
+                    <li>3 : all</li>
+                </ul>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Filters: number</td>
+            <td>
+                מספר בין 0 - 3 המתאר את רמת הפילטרים/ אנימציות אמצע המותרות במצגת
+                <ul>
+                    <li>0 : None</li>
+                    <li>1 : basic</li>
+                    <li>2 : standard</li>
+                    <li>3 : all</li>
+                </ul>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>TextStyles: number</td>
+            <td>
+                מספר בטווח 0 - 3 המתאר את כמות העיצובים המוגדרים מראש לטקסטים
+                <ul>
+                    <li>0 : Normal</li>
+                    <li>1 : basic</li>
+                    <li>2 : standard</li>
+                    <li>3 : flamboyant</li>
+                </ul>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>TextAnimes: number</td>
+            <td>
+                מספר בטווח 0 - 2 המתאר את רמת אנימציות הטקסטים המותרות
+                <ul>
+                    <li>0 : None</li>
+                    <li>1 : basic</li>
+                    <li>2 : all</li>                  
+                </ul>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Size: number</td>
+            <td>
+                מספר בטווח 0 - 4 עבור גודל קבוע של המצגת
+                <ul>
+                    <li>0 : not specified*</li>
+                    <li>1 : small</li>
+                    <li>2 : medium</li>
+                    <li>3 : large</li>
+                    <li>4 : Fullscreen</li>
+                </ul>
+            </td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>Audio : string</td>
+            <td><div class="rtl">מחרוזת המתארת את הpath/url של קובץ שמע</div></td>
+            <td>empty string ( "" )</td>
+        </tr>
+        <tr>
+            <td>Loop : boolean</td>
+            <td>האם המצגת תפעל שוב ושוב בלופ</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>Controls : number</td>
+            <td>האם להראות את הכפתורים :נגן, עצור ונגן מחדש (אם יש קובץ שמע, אז גם מד ווליום)
+                <ul>
+                    <li>0 : not visible</li>
+                    <li>1 : visible only when mouse over</li>
+                    <li>2 : always visible</li>
+                </ul>
+
+            </td>
+                
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>backgroundbetween : boolean</td>
+            <td>האם להראות תמונת רקע/ מסך שחור ריק בין התמונות</td>
+            <td>false</td>
+        </tr>
+        <tr>
+            <td>CssClass : string</td>
+            <td><div class="rtl">מחרוזת שתייצג css class שתהיה ישירות על אלמנט המצגת</div></td>
+            <td>empty string ( "" )</td>
+        </tr>
+        <tr>
+            <td>CallBack : object</td>
+            <td>אובייקט המורכב מ: 1. שם של מתודה 2. מערך של הפרמטרים, שייקראו מיד בסיום המצגת</td>
+            <td>empty object ( {} )</td>
+        </tr>
+        <tr>
+            <td>Poster : string</td>
+            <td><div class="rtl">מחרוזת המייצגת url/path של תמונה</div></td>
+            <td>empty string ( "" )</td>
+        </tr>
+    </table>
+    <div>* מצגת בגודל 0 היא בעצם החלטה שאתם רוצים להחליט בעצמכם על גודל המצגת בעזרת CssClass</div>
+    <div class="smallbrk"></div>
+    <div class="bold underline">Class Slide</div>
+    <div class="smallbrk"></div>
+    <div>מחלקה זו מייצגת תמונה, בתוספת מאפיינים שונים שעוזרים להפוך אותה לדינמית ורבת אפשרויות יותר</div>
+    <div class="underline">מתודות - methods :</div>
+    <div class="bold">אין</div>
+    <div class="smallbrk"></div>
+    <div class="underline">שדות - members :</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>name : type - שם : טיפוס</th>
+                    <th>description - תיאור</th>
+                    <th>default value - ערך ברירת מחדל</th>
+                </tr>
+
+                <tr>
+                    <td>path : string</td>
+                     <td><div class="rtl">מחרוזת המייצגת url/path של תמונה</div></td>
+                    <td>empty string ( "" )</td>
+                </tr>
+                <tr>
+                    <td>text : string</td>
+                    <td>הטקסט שיוצג על התמונה</td>
+                    <td>empty string ( "" )</td>
+                </tr>
+                <tr>
+                    <td>lifetime : number</td>
+                    <td>זמן בשניות מרגע שמופיעה התמונה ועד שהיא תתחיל להתחלף</td>
+                    <td>8</td>
+                </tr>
+            </thead>
+        </table>
+
+        <div class="bold underline">Class SlideTitle</div>
+        <div class="smallbrk"></div>
+        <div>מחלקה זו מייצגת את הטקסטים החופשיים במצגת, שאינם תלויים בתמונות.</div>
+        <div class="underline">מתודות - methods :</div>
+        <div class="bold ">אין</div>
+        <div class="smallbrk"></div>
+        <div class="underline">שדות - members :</div>
+        <table>
+                <thead>
+                     <tr>
+                        <th>name : type - שם : טיפוס</th>
+                        <th>description - תיאור</th>
+                        <th>default value - ערך ברירת מחדל</th>
+                     </tr>
+                    <tr>
+                        <td>text : string</td>
+                        <td>הטקסט</td>
+                        <td>empty string ( "" )</td>
+                    </tr>
+                    <tr>
+                        <td>lifetime : number</td>
+                        <td>זמן בשניות עד שיתחלף לטקסט הבא</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>style : string</td>
+                        <td><div>css class שיוצמד אל הטקסט</div></td>
+                        <td>empty string ( "" )</td>
+                    </tr>
+                </thead>
+            </table>
+        <div class="bold underline">Class BackGround</div>
+        <div class="smallbrk"></div>
+        <div>מחלקה זו מייצגת את תמונות הרקע, כולל (בעתיד) תכונות נוספות</div>
+        <div class="underline">מתודות - methods :</div>
+        <div class="bold">אין</div>
+        <div class="smallbrk"></div>
+        <div class="underline">שדות - members :</div>
+        <table>
+            <thead>
+                <tr>
+                        <th>name : type - שם : טיפוס</th>
+                        <th>description - תיאור</th>
+                        <th>default value - ערך ברירת מחדל</th>
+                </tr>
+                <tr>
+                    <td>path : string</td>
+                    <td><div class="rtl">מחרוזת המייצגת url/path של תמונה</div></td>
+                    <td>empty string ( "" )</td>
+                </tr>
+            </thead>
+        </table>
+        <div>דוגמא ליצירה של המחלקות הנ"ל</div>
+        <div class="exampleRect">
+            <code>
+                <span class="comment">add "img1.jpg ..." as image paths</span>
+                <br />
+                <span class="resWord">var</span> images = [1,2,3,4,5].map(function(e){return <span class="stringlit">"img"</span>+ e +<span class="stringlit">".jpg"</span>});
+                <br />
+                <br />
+                <span class="comment">add slides with same way of defining paths/urls</span>
+                <br />
+                <span class="resWord">var</span> slides = [6,7,8,9,10].map(function(e){return <span class="comment">creating Slide class objects</span>
+                 {
+                <span class="padLeft block">path:<span class="stringlit">"img"+ e +".jpg"</span>,<br />text:<span class="stringlit">"this is slide number "</span>+e,<br />lifetime: 5}</span>}
+                );
+                <br />
+                <br />
+                <span class="comment">slide texts</span>
+                <br />
+                <span class="resWord">var</span> slideTexts  = [1,2,3,4,5,6,7,8,9].map(function(e){return{
+                <span class="comment">create slide title class object</span>
+                <span class="padLeft block">
+                    text:<span class="stringlit">"this is text number "</span>+e,<br />lifetime: e ,<br /> style:<span class="stringlit">"color:red,font-size:16px;margin-left:auto;margin-right:auto"</span>
+                </span>
+                })
+                <br />
+                <br />
+                <span class="comment">backgrounds</span>
+                <br />
+                <span class="resWord">var</span> backgrounds = [1,2,3].map(function(e){return {path:"imgback"+ e +".jpg"});
+                <br />
+                <br />
+                <span class="comment"> now let's create the whole thing</span>
+                <span class="resWord">var</span> slideshow = {<br />
+                <span class="padLeft block">
+                    Images:images,<br />
+                    Slides:slides,<br />
+                    SlideTexts:slideTexts,<br />
+                    Animations:3,<br />
+                    Filters:3,<br />
+                    TextStyles:3,<br />
+                    TextAnimes:3,<br />
+                    Size:3,<br />
+                    Audio:<span class="stringlit">"song.mp3"</span>,<br />
+                    Loop:true,<br />
+                    Controls:1,<br />
+                    backgroundbetween:true<br />
+                    CssClass:<span class="stringlit">"myclass"</span>,<br />
+                    CallBack:{Function:<span class="stringlit">"alert"</span>,Params:[<span class="stringlit">"slideshow is over!"</span>]},<br />
+                    Poster:<span class="stringlit">"myPoster.jpg"</span>,<br />
+                                    
+                </span>
+                };
+                <br />
+            </code>
+        </div>
+
+        <div class="bold underline">Class SlideShowRemote</div>
+        <div class="smallbrk"></div>
+        <div>אובייקטים ממחלקה זו נוצרים אחרי יצירה מוצלחת של מצגת. בעזרת אובייקט זה ניתן לשלוט במצגת ואף לשנות אותה בזמן ריצה</div>
+        <div class="underline">מתודות - methods :</div>
+        <div class="bold left">Start()</div>
+        <table>
+            <tr>
+                <td>Signature - חתימה</td>
+                <td>Start(void)</td>
+            </tr>
+            <tr>
+                <td>Description - תיאור</td>
+                <td>מתחילה את המצגת. במקרה והמצגת עדיין לא נטענה במלואה, המצגת תתחיל כאשר תהיה מוכנה. שקול ללחיצה על כפתור הplay</td>
+            </tr>
+            <tr>
+                <td>Return Value - ערך החזרה</td>
+                <td>מתודה זו מחזירה את האובייקט עצמו</td>
+            </tr>
+            <tr>
+                <td>Parameters - פרמטרים</td>
+                <td>
+                    אין
+                </td>
+            </tr>
+            <tr>
+                <td>Example - דוגמא</td>
+                <td>
+                    <div class="exampleRect">
+                        <code>
+                          <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                            sd.Start();
+                        </code>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">Stop()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>Stop(void)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>עוצרת את המצגת ומחזירה אותה למצב ההתחלתי. שקול ללחיצה על כפתור הStop</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                אין
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.Stop();},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">Replay()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>Replay(void)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>מתחילה מחדש את המצגת. שקול ללחיצה על כפתור הreplay</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                אין
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.Replay();},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">AddImages()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>AddImages(images:Array&lt;string&gt;)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>מוסיף תמונות חדשות למצגת. אם המצגת רצה, התמונות יתווספו בפעם הבאה שהמצגת תתחיל מההתחלה</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">images : מערך כתובות של קבצי תמונה. בדומה לImages של מחלקת SlideShow</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();                        
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){<br>sd.AddImages([<span class="stringlit">"additionalImage1.jpg"</span>,<span class="stringlit">"additionalImage2.jpg"</span>]);<br>
+                        sd.Replay();<br>
+                        },10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">AddSlides()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>AddSlides(slides:Array&lt;Slide&gt;)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>מוסיף שקופיות חדשות למצגת. אם המצגת רצה, התמונות יתווספו בפעם הבאה שהמצגת תתחיל מההתחלה</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">slides: מערך אובייקטים ממחלקת Slide</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.AddSlides([{path:<span class="stringlit">"additionalslide.jpg"</span>,text:<span class="stringlit">"additinal slide 1"</span>},
+                                      {path:<span class="stringlit">"additionalSlide1.jpg"</span>,text:<span class="stringlit">"additionl slide 2"</span>}]);
+                        <br>sd.Replay();<br>},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">AddSlideTexts()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>AddSlideTexts(slideTexts:Array&lt;SlideTitle&gt;)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>מוסיף טקסטים חופשיים למצגת, אם המצגת רצה, הטקסטים יתווספו בפעם הבאה שהמצגת תתחיל</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">slideTitles: מערך אובייקטים ממחלקת SlideTitle</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.AddSlideTexts([{text:<span class="stringlit">"Additional Text"</span>,style:<span class="stringlit">"color:blue,font-size:16px;margin-left:auto;margin-right:auto"</span>},
+                        {text:<span class="stringlit">"Additional Text2"</span>,style:<span class="stringlit">"color:red,font-size:16px;margin-left:auto;margin-right:auto"</span>}]);
+                        <br>sd.Replay();<br>},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">AddBackGrounds()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>AddBackGrounds(BackGrounds:Array&lt;BackGrounds&gt;)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>מוסיף תמונות רקע חדשות למצגות, התמונות יתווספו רק כאשר המצגת תרוץ שוב מההתחלה</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">BackGrounds: מערך אובייקטים ממחלקת BackGround</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images,backgroundbetween:true});
+                        <br />
+                        sd.Start();                       
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.AddBackGrounds([{path:<span class="stringlit">"additionalback1.jpg"}</span>,{path:<span class="stringlit">"additionalback2.jpg"}</span>]);
+                        <br>sd.Replay();
+                        <br>},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetAnimationLevel()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetAnimationLevel(level : number)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את רמת האנימציות המותרת. מספר גבוה יותר מאפשר אנימציות מורכבות יותר. מקבל ערכים בין 0 ל3</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">level : מספר בין 0 ל3. מספר לא בטווח יחזיר שגיאה</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetAnimationLevel(3);sd.Replay();},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetFilters()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetFilters(level : number)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את רמת הפילטרים/אנימציות אמצע. מספר גבוה יותר מאפשר אפקטים מורכבים יותר. מקבל ערכים בין 0 ל3</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">level : מספר בין 0 ל3. מספר לא בטווח יחזיר שגיאה</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetFilters(3);sd.Replay();},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div><strong>שימו לב!</strong> אפשרות זו אינה עובדת כרגע בinternet explorer כיוון שהוא לא תומך בכל הפיצ'רים של CSS3</div>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetTextStyles()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetTextStyles(level : number)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה רמת סגנונות הטקסטים האפשריים. מספר גבוה יותר מאפשר סגנונות נוספים. מקבל ערכים בין 0 ל3</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">level : מספר בין 0 ל3. מספר לא בטווח יחזיר שגיאה</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Slides:slides});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetTextStyles(3);sd.Replay();},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetTextAnimes()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetTextAnimes(level : number)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את רמת האנימציות עבור טקסטים. מספר גבוה יותר מאפשר אנימציות נוספות. מקבל ערכים בין 0 ל2</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">level : מספר בין 0 ל2. מספר לא בטווח יחזיר שגיאה</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Slides:slides});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetTextAnimes(2);sd.Replay();},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetSize()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetSize(size : number)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את הגודל הקבוע של המצגת. מקבל ערכים בטווח 0 עד 4</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">level : מספר בין 0 ל2. מספר לא בטווח יחזיר שגיאה</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetSize(3);},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetAudio()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetAudio(source : string)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את קובץ הצליל עבור המצגת. ערך המחרוזת הריקה ("") יגרום להסרת המוזיקה מהמצגת.</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">source : כתובת של קובץ שמע מפורמט mp3,ogg או wav</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images,Audio:<span class="stringlit">"song1.mp3"</span>});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.Audio(<span class="stringlit">"song2.mp3"</span>);},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetVolume()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetAudio(volume : number)</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את עוצמת הסאונד של הצליל במצגת. שקול לשימוש במד הווליום</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">volume :  מספר בין 0 (השתק) לבין 100. הערה: הערך התחילי הוא 50</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images,Audio:<span class="stringlit">"song1.mp3"</span>});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetVolume(80);},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetCallBack()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetCallBack(callBackObject : {Function:function,Params:Array&lt;any&gt;})</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את הקוד שפועל מיד בסיום המצגת</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">callBackObject : אובייקט זה מורכב משני חלקים. Function הוא שם של פונקציה הקיימת בקונטקסט הראשי, וParams הוא מערך המכיל את כל הפרמטרים איתם צריכה הפונקציה להיקרא.</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">function</span> foo(a,b,c){<br />
+                         <span class="comment">do something with a,b and c...</span>
+                        }
+                        <br />
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetCallBack({Function:<span class="stringlit">"foo"</span>,Params:[5,<span class="stringlit">"boom"</span>],20});},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetLoop()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetLoop(loop : boolean})</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>קובע האם המצגת תרוץ שוב מיד בסיומה בלולאה, או לא</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">loop : ערך בוליאני</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetLoop(<span class="resWord">true</span>)},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetBackgroundBetween ()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetBackgroundBetween ( backgroundbetween : boolean})</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>קובע האם ישנו רווח קצר בין תמונה לתמונה.</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">backgroundbetween : ערך בוליאני</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images,Animations:1});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.backgroundbetween(<span class="resWord">true</span>)},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="smallbrk"></div>
+    <div class="bold left">SetCssClass()</div>
+    <table>
+        <tr>
+            <td>Signature - חתימה</td>
+            <td>SetCssClass( CssClass : string})</td>
+        </tr>
+        <tr>
+            <td>Description - תיאור</td>
+            <td>משנה את ה css class המוצמד אל אלמנט המצגת</td>
+        </tr>
+        <tr>
+            <td>Return Value - ערך החזרה</td>
+            <td>מתודה זו מחזירה את האובייקט עצמו</td>
+        </tr>
+        <tr>
+            <td>Parameters - פרמטרים</td>
+            <td>
+                <ul>
+                    <li>
+                        <div class="rtl">CssClass : מחרוזת המייצגת class של CSS</div>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Example - דוגמא</td>
+            <td>
+                <div class="exampleRect">
+                    <code>
+                        HTML: <br />
+                        <span class="htmlTag">&lt;style&gt;</span>
+                        <br />
+                        <span class="className">.framed</span>{<br />
+                           border: 8px solid blue;
+                        <br />}
+                        <br />
+                        <span class="htmlTag">&lt;/style&gt;</span>
+                        <br />
+                        <br />
+                        <span class="resWord">var</span> sd = EldritchSlideShow.Create({Images:images});
+                        <br />
+                        sd.Start();
+                        <br />
+                        setTimeout(<span class="resWord">function</span>(){sd.SetCssClass(<span class="resWord">"framed"</span>)},10000);
+                    </code>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <h2 class="center underline">דוגמא מעשית</h2>
+    <div>בחלק שלהלן, נבנה דוגמא קטנה שתמחיש את כוחו של הכלי הזה, ואת היכולת שלו לשפר בכמה רמות אתרים ממשיים.</div>
+    <div>עד כה בסך הכול ראינו כיצד ליצור מצגת בודדת על דף ריק. גם אני מוכן להסכים שזה נחמד, אבל לא נראה הכי פרקטי. מתי בדיוק נרצה להשתמש במצגות כחלק מאפליקציה ממשית?</div>
+    <div>ובכן, מייד נראה דוגמא, מלווה בכל הקוד הדרוש לכך, החזיקו חזק!</div>
+    <div class="smallbrk"></div>
+    <div class="bold underline">דוגמא מעשית : אתרי נופש</div>
+    <div>ובכן, הבה נניח שאני בונה דף עבור אפליקציה של חברה המציעה חבילות נופש, והייתי רוצה להמחיש ללקוחות שלי פרטים בנוגע לאתרים הקיימים אצלי.</div>
+    <div>הרעיון שהוצע היה לפתוח בפניהם מפה, ובה ישובצו האתרים הרלונטיים. הבה נראה את הקוד:</div>
+    <div>הערה: בדוגמא זו נשתמש גם בספרייה של גוגל google maps API.</div>
+    <div class="bold">בסיס</div>
+    <div class="exampleRect">
+        <code>
+            <span class="htmlTag">&lt;!DOCTYPE html&gt;</span><br/>
+            <span class="htmlTag"> &lt;html&gt;</span><br/>
+            <span class="htmlTag">&lt;head&gt;</span><br/>
+            <span class="htmlTag">&lt;title&gt;</span> Eldritch media Slides/google maps demo  <span class="htmlTag">&lt;/title&gt;</code><br/>
+            <span class="htmlTag padSmall">&lt;style&gt;</span><br/><br/>
+            <span class="htmlTag padSmall">&lt;/style&gt;</span><br/>
+            <span class="htmlTag">&lt;/head&gt;</span><br/>
+            <span class="htmlTag padSmall">&lt;body&gt;</span><br/><br/>
+            <span class="htmlTag padMed">&lt;script <span class="attribute">src</span>=<span class="stringlit">"http://maps.googleapis.com/maps/api/js"</span>&gt;</span><span class="htmlTag">&lt;/script&gt;</span><br/>
+            <span class="htmlTag padMed">&lt;script <span class="attribute">src</span>=<span class="stringlit">"https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.min.js"</span>&gt;</span><span class="htmlTag">&lt;/script&gt;</span><br/>
+            <span class="htmlTag padMed">&lt;script&gt;</span><br/><br/>
+            <span class="htmlTag padMed">&lt;/script&gt;</span><br/>
+            <span class="htmlTag padSmall">&lt;/body&gt;</span><br/>
+            
+            <span class="htmlTag">&lt;/html&gt;</span>
+         </code>
+    </div>
+    <div>הערה: כמובן שבדוגמא הזו יש כמה צורות קוד לא מומלצות (תגית style בתוך הדף למשל) אך הכול למען הבהירות כאן</div>
+    <div>ובכן, זוהי רק התבנית, ייבאנו את שתי הספריות (את Eldritch Media Slides ואת Google Maps) .כפי שניתן לראות בסקריפט הראשון המצורף</div><br/>
+    <div>בשלב הבא, נוסיף קצת תוכן ואת העיצוב:</div><br/>
+    <div class="exampleRect">
+        <code>
+            <span class="htmlTag">&lt;!DOCTYPE html&gt;</span><br/>
+            <span class="htmlTag"> &lt;html&gt;</span><br/>
+            <span class="htmlTag">&lt;head&gt;</span><br/>
+            <span class="htmlTag">&lt;title&gt;</span> Eldritch media Slides/google maps demo  <span class="htmlTag">&lt;/title&gt;</code><br/>
+            <span class="htmlTag padSmall">&lt;style&gt;</span><br/><br/>
+            <div class="padMed">
+                <span class="className">body</span>{<br/>
+                <span class="padLg"><span class="attribute">background-color:</span>rgba(56, 24, 24, 0.88);</span><br/>
+                }<br/><br/>
+                
+                <span class="className">#map</span>{<br/>
+                <span class="padLg"><span class="attribute">position:</span>absolute;</span><br/>
+                <span class="padLg"><span class="attribute">width:</span>80%;</span><br/>
+                <span class="padLg"><span class="attribute">height:</span>80%;</span><br/>
+                <span class="padLg"><span class="attribute">margin-left:</span>10%;</span><br/>
+                }<br/><br/>
+                
+                <span class="className">.margins</span>{<br/>
+                <span class="padLg"><span class="attribute">margin-left:</span>20%;</span><br/>
+                <span class="padLg"><span class="attribute">margin-top:</span>5%;</span><br/>
+                }<br/><br/>
+                
+                <span class="className">.windowContent</span>{<br/>
+                <span class="padLg"><span class="attribute">width:</span>80%;</span><br/>
+                <span class="padLg"><span class="attribute">margin-left:</span>10%;</span><br/>
+                }<br/><br/>
+                
+                <span class="className">h1</span>{<br/>
+                <span class="padLg"><span class="attribute">text-align:</span>center;</span><br/>
+                <span class="padLg"><span class="attribute">color:</span>lightblue;</span><br/>
+                <span class="padLg"><span class="attribute">margin-top:</span>3%;</span><br/>
+                }<br/><br/>
+                
+            </div>
+            <span class="htmlTag padSmall">&lt;/style&gt;</span><br/>
+            <span class="htmlTag">&lt;/head&gt;</span><br/>
+            <span class="htmlTag padSmall">&lt;body&gt;</span><br/><br/>
+            <span class="htmlTag padMed">&lt;h1&gt;</span>nice places to see<span class="htmlTag padSmall">&lt;/h1&gt;</span><br/>
+            <span class="htmlTag padMed">&lt;div <span class="attribute">id</span>=<span class="stringlit">"map"</span>&gt;</span><span class="htmlTag">&lt;/div&gt;</span><br/><br/><br/>
+            <span class="htmlTag padMed">&lt;script <span class="attribute">src</span>=<span class="stringlit">"http://maps.googleapis.com/maps/api/js"</span>&gt;</span><span class="htmlTag">&lt;/script&gt;</span><br/>
+            <span class="htmlTag padMed">&lt;script <span class="attribute">src</span>=<span class="stringlit">"https://gitcdn.link/repo/oryaniv/Eldritch-Media-Slides/master/EldritchMediaSlides.min.js"</span>&gt;</span><span class="htmlTag">&lt;/script&gt;</span><br/>
+            <span class="htmlTag padMed">&lt;script&gt;</span><br/>
+            <span class="htmlTag padMed">&lt;/script&gt;</span><br/>
+            <span class="htmlTag padSmall">&lt;/body&gt;</span><br/>
+            
+            <span class="htmlTag">&lt;/html&gt;</span>
+         </code>
+    </div>
+    <div>ובכן, כאן הצבנו בתוך גוף המסמך את האלמנט שיהיה המפה, בתוספת קצת עיצוב שיגרום לכל זה לקבל מעט צורה. עכשיו, נעבור אל העיקר על ידי שנוסיף את יצירת המפה.</div>
+    <div class="smallbrk"></div>
+    <div>ולבסוף (החזיקו חזק) ייכנס כל הקוד שלהלן אל תוך תגית הסקריפט שנמצאת אחרונה :</div>
+   <!-- <div class="exampleRect">
+        <code>
+            <span class="comment"> *1* data declaration and initialization</span>
+            <span class="resWord">var</span> positions;<br/>
+            <span class="resWord">var</span> places;<br/>
+            <span class="resWord">var</span> descriptions;<br/>
+            <span class="resWord">var</span> markers = [];<br/>
+            initData();<br/><br/>
+
+	        <span class="comment"> *2* map creation</span>
+            <span class="resWord">var</span> gmap = <span class="resWord">new</span> google.maps.Map(document.getElementById(<span class="stringlit">"map"</span>),{<br/>
+                <span class="padMed">center:createPoint(48.8566,2.35222),</span><br/>
+                <span class="padMed">zoom:5</span><br/>
+            });<br/><br/>
+
+            <span class="comment"> *3* create markers on the map</span>
+            data.forEach(function(e){<br/>
+                <span class="padLg">
+                    <span class="resWord">var</span> marker = <span class="resWord">new</span> google.maps.Marker({</span><br/>
+                   <span class="padGrt"> position:e.pos</span><br/>
+                
+               <span class="padLg"> }});</span> <br/><br/>
+                <span class="padLg">markers.push(marker);</span><br/>
+                <span class="resWord padLg">var</span> markerIndex = markers.length - 1;<br/>
+                <span class="padLg">marker.setMap(gmap);</span><br/>
+                <span class="resWord padLg">var</span> slideId= e.name + <span class="stringlit">"Slide"</span><br/><br/>
+                <span class="comment padLg"> *4* this is going to be our info window template</span>
+                <span class="padLg"> windowContent = <span class="stringlit">"&lt;div class='windowContent'&gt;&lt;h2 style='text-align:center;'"</span>+ e.name +<span class="stringlit">"&lt;/h2&gt;"+"&lt;div&gt;"</span>+ e.description +<span class="stringlit">"&lt;/div&gt;"</span>+<span class="stringlit"> "&lt;div&gt; class='margins' id='"</span>+ slideId +<span class="stringlit"> "'>&lt;/div&gt;&lt;/div&gt;"</span>;</span><br/><br/>
+                <span class="comment padLg"> *5* create info window and attach an on dom ready function</span>
+                <span class="resWord padLg">var</span> infoWindow = <span class="resWord">new</span> google.maps.InfoWindow({content: windowContent});<br/>
+                <span class="padLg">google.maps.event.addListener(infoWindow,<span class="stringlit">'domready'</span>,<span class="resWord">function</span>(){</span><br/>
+                 <span class="padGrt"><span class="resWord">var</span> slideDiv = document.querySelector("#"+slideId);</span> <br/>
+                 <span class="padGrt"><span class="resWord">if</span> (slideDiv.childNodes.length > 0){</span> <br/>
+                        <span class="padGrtst">slideDiv.removeChild(slideDiv.childNodes[0]);</span><br/>
+                    <span class="padGrt">}</span><br/><br>
+                    <span class="comment padGrt"> *6* time to use Eldritch Media Slides!</span>
+                    <span class="padGrt">EldritchSlideShow.Create(<span class="stringlit">"#"</span> + slideId,{</span><br/>
+                                                <span class="padGrtst">Slides:e.Images,Size:1</span><br/>
+                                                <span class="padGrtst">,Loop:<span class="resWord">true</span>,CssClass:'rounded framed'</span><br/>
+                                                <span class="padGrtst">,Audio: e.sound,</span><br/>
+                                                <span class="padGrtst">CallBack:{Function:<span class="stringlit">"animate"</span>,Params:[markerIndex]}</span><br/>
+                                                <span class="padGrtr">}).Start();</span> <br/><br/>
+                <span class="comment padGrt"> *7* making the info window open when clicking on the marker</span>                    		
+                <span class="padGrt">google.maps.event.addListener(marker,'click',function(){</span><br/>
+                    <span class="padGrtst">infoWindow.open(gmap,marker);</span><br/>
+                <span class="padGrt">});</span><br/>
+            });<br/><br/>
+            
+            <span class="comment"> *8* this will be a callback for the slideshow, it will animate the marker</span>
+            <span class="resWord">function</span> animate(index){<br/>
+                
+               <span class="padMed"> <span class="resWord">var</span> marker = markers[index];</span><br/>
+                <span class="padMed">marker.setAnimation(google.maps.Animation.DROP);</span><br/>
+                <span class="padMed">setTimeout(<span class="resWord">function</span>(){marker.setAnimation(google.maps.Animation.DROP);},1000);</span><br/>
+            }<br/>
+<br/>
+            <span class="resWord">function</span> createPoint(x,y){<br/>
+                <span class="padMed"><span class="resWord">return</span> new google.maps.LatLng(x,y);<br/></span>
+            }<br/>
+<br/>
+            <span class="comment"> *9* some decent JSON to represent the data for the application</span>
+            <span class="resWord">function</span> initData(){<br/>
+                <span class="padMed">data = [<br/>
+                            <span class="padGrt">{</span><br/>
+                    <span class="padGrtr"> pos:createPoint(48.8566,2.35222),</span><br/>
+                                         <span class="padGrtr">name:<span class="stringlit">"Paris"</span></span>,<br/>
+                                         <span class="padGrtr">description:<span class="stringlit">"Paris (French: [paʁi] ( listen)) is the capital and most populous city of France. Situated on the"<br> <span class="padGrtr">Seine River in the north of the country, it is in the centre of the</span> Île-de-France <br> <span class="padGrtr">region, also known as the région parisienne, Paris Region"</span></span></span>,<br/>
+                                         <span class="padGrtr">Images: createImagesUrls(<span class="stringlit">'paris'</span>)</span>,<br/>
+                                         <span class="padGrtr">sound:<span class="stringlit">"sites/france.mp3"</span></span><br/>
+                    
+                </span>
+			<span class="padGrt">},</span><br/>
+			<span class="padGrt">{</span><br/>
+				<span class="padGrtr">pos:createPoint(51.5073509,-0.12775),</span><br/>
+				<span class="padGrtr">name:<span class="stringlit">"London"</span>,</span><br/>
+				<span class="padGrtr">description:<span class="stringlit">"London Listeni/ˈlʌndən/ is the capital and most populous city of England and the United Kingdom<br><span class="padGrtr">. Standing on the River Thames in the south east of Great Britain, London</span><br> <span class="padGrtr">has been a major settlement for two millennia",</span></span></span><br/>
+				<span class="padGrtr">Images:createImagesUrls('london'),</span><br/>
+				<span class="padGrtr">sound:<span class="stringlit">"sites/england.mp3"</span></span><br/>
+			<span class="padGrt">},</span><br/>
+			<span class="padGrt">{</span><br/>
+				<span class="padGrtr">pos:createPoint(52.520006,13.40495),</span><br/>
+				<span class="padGrtr">name:<span class="stringlit">"Berlin"</span>,</span><br/>
+				<span class="padGrtr">description:<span class="stringlit">"Berlin (/bərˈlɪn/, German: [bɛɐ̯ˈliːn] ( listen)) is the capital of Germany and one of the 16<br> <span class="padGrtr">states of Germany. With a population of approximately 3.5 million people, it is</span><br> <span class="padGrtr">the second most populous city proper and the seventh most populous urban area in the European Union"</span></span>,</span><br/>
+				<span class="padGrtr">Images:createImagesUrls(<span class="stringlit">'berlin'</span>),</span><br/>
+				<span class="padGrtr">sound:<span class="stringlit">"sites/germany.mp3"</span></span><br/>
+			<span class="padGrt">},</span><br/>
+			<span class="padGrt">{</span><br/>
+				<span class="padGrtr">pos:createPoint(41.385063,2.1734034),</span><br/>
+				<span class="padGrtr">name:<span class="stringlit">"Barcelona"</span>,</span><br/>
+				<span class="padGrtr">description:<span class="stringlit">"Barcelona (/bɑːrsəˈloʊnə/, Catalan: [bəɾsəˈlonə], Spanish: [barθeˈlona]) is the capital city<br> <span class="padGrtr">of the autonomous community of Catalonia in Spain and Spain's second most populated city</span><br><span class="padGrtr">, with a population of 1.6 million within its administrative limits"</span></span>,</span><br/>
+				<span class="padGrtr">Images:createImagesUrls(<span class="stringlit">'barcelona'</span>),</span><br/>
+				<span class="padGrtr">sound:<span class="stringlit">"sites/spain.mp3"</span></span><br/>
+			<span class="padGrt">}</span><br/>
+		   <span class="padLg">];</span><br/>
+<br/>
+            }<br/></br>
+            
+            <span class="comment"> *10* let's use this to quickly create image url's. always recommended</span>
+            <span class="resWord">function</span> createImagesUrls(name){<br/>
+               <span class="padMed"> <span class="resWord">return</span> [1,2,3,4].map(<span class="resWord">function</span>(e){ return {path:<span class="stringlit">'sites/'</span>+name+e+<span class="stringlit">'.jpg'</span>,lifetime:3} });</span><br/>
+            }<br/>
+        </code>
+    </div> -->
+    
+    <pre>
+        <code class="javascript">
+            
+// *1* data declaration and initialization
+
+var positions;
+var places;
+var descriptions;
+var markers = [];
+initData();
+
+// *2* map creation
+
+var gmap = new google.maps.Map(document.getElementById("map"),{
+    center:createPoint(48.8566,2.35222),
+    zoom:5
+});
+
+//  *3* create markers on the map
+
+data.forEach(function(e){
+	var marker = new google.maps.Marker({
+		position:e.pos
+	}); 
+	markers.push(marker);
+	var markerIndex = markers.length - 1;
+	marker.setMap(gmap);
+	var slideId=e.name+"Slide"
+    
+    //*4* this is going to be our info window template
+    
+	windowContent = "&lt;div class='windowContent'&gt;&lt;h2 style='text-align:center;'&gt;"+ 
+        e.name +"&lt;/h2&gt;"
+        +"&lt;div&gt;"
+        + e.description + 
+        "&lt;/div&gt;" + 
+        "&lt;div class='margins' id='" + slideId +"'&gt;&lt;/div&gt;&lt;/div&gt;";
+        
+    // *5* create info window and attach an on dom ready function
+        
+	var infoWindow = new google.maps.InfoWindow({content: windowContent});
+	google.maps.event.addListener(infoWindow,'domready',function(){
+		var slideDiv = document.querySelector("#"+slideId);
+		if(slideDiv.childNodes.length > 0){
+			slideDiv.removeChild(slideDiv.childNodes[0]);	
+		}
+        
+        // *6* time to use Eldritch Media Slides!
+        
+		EldritchSlideShow.Create("#"+slideId,
+                                {
+                                    Slides:e.Images,Size:1
+                                    ,Loop:true
+                                    ,Animations:3
+                                    ,Filters:2
+                                    ,Audio: e.sound,
+                                    CallBack:{Function:"animate",Params:[markerIndex]}
+                                }
+				).Start();   		
+	});
+    
+    // *7* making the info window open when clicking on the marker
+    
+	google.maps.event.addListener(marker,'click',function(){
+		infoWindow.open(gmap,marker);
+	});
+});
+
+// *8* this will be a callback for the slideshow, it will animate the marker
+
+function animate(index){
+	var marker = markers[index];
+	marker.setAnimation(google.maps.Animation.DROP);
+	setTimeout(function(){marker.setAnimation(google.maps.Animation.DROP);},1000);
+}
+
+function createPoint(x,y){
+	return new google.maps.LatLng(x,y);
+}
+
+// *9* some decent JSON to represent the data for the application
+
+function initData(){
+	data = [
+			{
+				pos:createPoint(48.8566,2.35222),
+				name:"Paris",
+				description:"Paris (French: [paʁi] ( listen)) is the capital and most populous" +
+                                            "city of France. Situated on the Seine River in the north of the country," 
+                                           +"it is in the centre of the Île-de-France region, also known as the"
+                                          + "région parisienne, Paris Region",
+				Images: createImagesUrls('paris'),
+				sound:"sites/france.mp3"
+			},
+			{
+				pos:createPoint(51.5073509,-0.12775),
+				name:"London",
+				description:"London Listeni/ˈlʌndən/ is the capital and most populous" +
+                                            "city of England and the United Kingdom." 
+                                           +"Standing on the River Thames in the south east of Great Britain," 
+                                          + "London has been a major settlement for two millennia",
+				Images:createImagesUrls('london'),
+				sound:"sites/england.mp3"
+			},
+			{
+				pos:createPoint(52.520006,13.40495),
+				name:"Berlin",
+				description:"Berlin (/bərˈlɪn/, German: [bɛɐ̯ˈliːn] ( listen)) is the capital of Germany" +
+                                             "and one of the 16 states of Germany." +
+                                             " With a population of approximately 3.5 million people,"+
+                                             " it is the second most populous city"+ 
+                                             "proper and the seventh most populous urban area in the European Union",
+				Images:createImagesUrls('berlin'),
+				sound:"sites/germany.mp3"
+			},
+			{
+				pos:createPoint(41.385063,2.1734034),
+				name:"Barcelona",
+				description:"Barcelona (/bɑːrsəˈloʊnə/, Catalan: [bəɾsəˈlonə], Spanish: [barθeˈlona]) is the "+
+                                             "capital city of the autonomous community" +
+                                              "of Catalonia in Spain and Spain's second most populated"+
+                                              " city, with a population of" +
+                                              "1.6 million within its administrative limits",
+				Images:createImagesUrls('barcelona'),
+				sound:"sites/spain.mp3"
+			}
+	    ];
+
+}
+
+// *10* let's use this to quickly create image url's. always recommended
+
+function createImagesUrls(name){
+	return [1,2,3,4].map(function(e){ return {path:'sites/'+name+e+'.jpg',lifetime:3} });
+}
+         </code>
+    </pre>
+    
+    <div>כתבו ראשית את חלק 1 ו9. בחלקים אלו אנו מאתחלים את המידע עבור המפה והמצגות. כרגע מגיע המידע כJSON הכתוב ישירות בקוד,</div>
+    <div>אולם באפליקציה אמיתית ומורכבת יותר, יגיע המידע הזה ממסד נתונים בשרת. שימו לב למודל המסודר של הנתונים, הניתן להרחבה בקלות.</div>
+    <div class="smallbrk"></div>
+    <div>בחלק 2 אנו מייצרים מפת גוגל, ומעבירים לה פרמטרים כגון מרכז המפה בקוארדינטות, ואת רמת הקירוב התחילית.</div>
+    <div class="smallbrk"></div>
+    <div>בחלק 3 מתחילה העבודה האמיתית. כאן אנחנו מייצרים את הסמנים שעל המפה. עבור כל אחד מהאובייקטים שנמצאים אצלנו בdata, אנו מייצריים סמן.</div>
+    <div>מיקומו של הסמן ייקבע לפי המידע שברשותנו. לאחר מכן, נכניס את הסמן לתוך מערך מוכן מראש. שימו לב שאנחנו שומרים את האינדקס שלו, מייד נראה לשם מה.</div>
+    <div class="smallbrk"></div>
+    <div>בקטע 4, אנו מייצרים עבור הסמן את חלון המידע שייפתח כאשר נלחץ עליו. יש שם תבנית html, לא מתוחכמת במיוחד, אבל ממצה.</div>
+    <div>נשים לב לשלב 5 : השורה הראשונה תהיה יצירת החלון עם התבנית שקבענו. לאחר מכן, אנו מייצרים פונקציה שתתבצע ברגע שנפתח החלון. פונקציה זו תנסה תילה לגלות האם המצגת כבר קיימת, ותמחק אותה כדי שלא תיווצר פעם נוספת.</div>
+    <div>עכשיו מגיע החלק המעניין: אנו מייצרים את המצגת בעזרת התמונות וקובץ השמע שקיבלנו ומפעילים אותו, וזהו! זה כל כך קל להטמיע את המצגת בתוך חלון המידע.</div>
+    <div class="smallbrk"></div>
+    <div>חלק 7 הוא רק לדאוג שחלון המידע ייפתח כאשר נלחץ על הסמן.</div>
+    <div class="smallbrk"></div>
+    <div>דבר אחרון: שימו לב לחלק 8. כאן מוגדרת פונקציה בשם animate, שתפקידה לקרוא לאנימציה עבור הסמנים. אם תסתכלו היטב ביצירת המצגת, תוכלו לראות שהיא הוגדרה כcallback עבור המצגת יחד עם האינדקס של הסמן. זוהי רק דוגמא פשוטה עבור היכולות התכנותיות המגיעות יחד עם המצגות.</div>
+    <div class="smallbrk"></div>
+    <div>עכשיו תורכם: קחו את הקוד שנמצא כאן, ודאגו לשים תמונות וקבצי שמע לפי הpath הכתוב בקוד (כלומר שנו אותו אם צריך) וראו בעצמכם כמה קל לייצר אפליקציה עם מצגות דינמיות!</div>
+    <div class="smallbrk"></div>
+    <h2>לסיום</h2>
+    <div>במדריך זה ראינו כיצד ניתן להשתמש בEldritch Media Slides הן כדי ליצור מצגות איכותיות במהירות לשימוש חיצוני, והן להטמעה בדף אינטרנט. כמובן שמי שיבחר לחקור את היכולות הלאה, רק יגלה יותר ויותר כמה דברים נוספים אפשר לעשות בעזרת הכלי הזה.</div>
+    <div>כרגע הכלי נמצא בגרסת הבטא, ועדיין יש יכולות רבות שאני מתכנן להוסיף לו. הישארו בהאזנה, עם קצת מזל, זה יהיה אחד מהדברים הגדולים הבאים.</div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
