@@ -79,7 +79,7 @@ body:after {
 
 .main-body {
   box-shadow: 0 0 2.5em #29252D;
-  background-image: url("http://wallpaperswa.com/thumbnails/detail/20120403/black%20textures%20background%201920x1200%20wallpaper_www.wallpaperwa.com_19.jpg");
+  background-color:black;
   background-size: 100% 100%;
   min-height: 100vh;
   /*border-radius:2%;*/ }
@@ -98,7 +98,7 @@ body:after {
     padding: 1% 3% 0 0; }
     .list-container ul li {
       display: inline;
-      margin-left: 2.5em;
+      margin-left: 2em;
       text-align: center;
       /* font: bold italic 1.2em/1 "ubuntu", Helvetica, sans-serif; */ }
       .list-container ul li a {
